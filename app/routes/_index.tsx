@@ -1,7 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { useOptionalUser } from "~/utils";
-import FixedHeader from "~/components/fixed-header";
 // ====================================================================================================
 export const meta: MetaFunction = () => [{ title: "Remix Notes" }];
 
@@ -10,7 +9,6 @@ export default function Index() {
   return (
     <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
       <div className="relative sm:pb-16 sm:pt-8">
-        <FixedHeader/>
 
         <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
           <div className="mt-6 flex flex-wrap justify-center gap-8">
@@ -74,7 +72,7 @@ export default function Index() {
               <a
                 key={img.href}
                 href={img.href}
-                className="flex h-16 w-32 justify-center p-1 grayscale transition hover:grayscale-0 focus:grayscale-0"
+                className="flex h-16 w-32 justify-center p-1 grayscale transition hover:grayscale-0 focus:grayscale-0 select-none	"
               >
                 <img alt={img.alt} src={img.src} className="object-contain" />
               </a>

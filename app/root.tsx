@@ -9,10 +9,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-
+import FixedHeader from "~/components/fixed-header";
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
-
+// ====================================================================================================
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -31,8 +31,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+
+      <body className="mt-10 h-full">
+        <FixedHeader/>
         <Outlet />
+        
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
