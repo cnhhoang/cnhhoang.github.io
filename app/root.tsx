@@ -12,6 +12,7 @@ import {
 import FixedHeader from "~/components/fixed-header";
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
+
 // ====================================================================================================
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -22,6 +23,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({ user: await getUser(request) });
 };
 
+//****************************************************************************************************
 export default function App() {
   return (
     <html lang="en" className="h-full">
