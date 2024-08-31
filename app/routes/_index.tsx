@@ -2,12 +2,14 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { useOptionalUser } from "~/utils";
 // ====================================================================================================
-export const meta: MetaFunction = () => [{ title: "Remix Notes" }];
+export const meta: MetaFunction = () => [{ title: "Hoang Chung" }];
 
 export default function Index() {
   const user = useOptionalUser();
   return (
-    <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
+    <main className={`relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center
+                      bg-gradient-to-b from-sky-950 via-cyan-900 to-blue-950`
+    }>
       <div className="relative sm:pb-16 sm:pt-8">
 
         <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
