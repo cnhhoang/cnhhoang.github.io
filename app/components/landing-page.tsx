@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PromithicLogo from '~/assets/promithic-logo';
 // ====================================================================================================
 export const useTypewriter = (text: string, speed = 50, erase = false, id: number, nextId: number, active: number, setActive: (id: number) => void) => {
     const [displayText, setDisplayText] = useState('');
@@ -67,7 +68,7 @@ export default function LandingPage() {
     ]
   
     return (
-      <div className="h-screen w-full flex flex-col justify-center items-center">
+      <div className="h-screen w-full flex flex-col justify-center items-center focus:border-transparent select-none">
         <div className = "grid grid-rows-2">
             <div className="flex justify-center items-center">
                 <Typewriter text="Unlocking potential as a " textSetting="text-4xl text-white" id={0} nextId={1} setActive={setActive} active={active} />

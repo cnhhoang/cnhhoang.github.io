@@ -23,7 +23,7 @@ export default function FixedHeader()
     <Sheet open={true} modal={false}>
       <SheetContent side={"top"}  
                     className = {`h-10 w-full flex items-center 
-                                  focus:border-transparent select-none	
+                                  focus:border-transparent select-none
                                   bg-gradient-to-r from-blue-700 via-cyan-500 to-teal-400`}
       >
         <div className="text-2xl text-white font-serif	">
