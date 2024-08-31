@@ -9,11 +9,10 @@ export const meta: MetaFunction = () => [{ title: "Hoang Chung" }];
 export default function Index() {
   const user = useOptionalUser();
   return (
-    <main className={`relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center
-                      bg-gradient-to-b from-sky-950 via-cyan-900 to-blue-950`
-    }>
+    <div className={`min-h-screen bg-gradient-to-b from-sky-950 via-cyan-900 to-blue-950`}>
+    {/* <div className={`min-h-screen bg-gradient-to-b from-slate-900 to-blue-800`}> */}
       <LandingPage/>
       <Footer/>
-    </main>
+    </div>
   );
 }
