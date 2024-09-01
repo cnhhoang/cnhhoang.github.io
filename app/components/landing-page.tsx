@@ -1,70 +1,28 @@
 import { useState, useEffect } from 'react';
-import PromithicLogo from '~/assets/promithic-logo';
-// ====================================================================================================
-export const useTypewriter = (text: string, speed = 50, erase = false, id: number, nextId: number, active: number, setActive: (id: number) => void) => {
-    const [displayText, setDisplayText] = useState('');
-    
-    useEffect(() => {
-      if (active === id) {
-        let i = 0, forward = true;
-        const typingInterval = setInterval(() => {
-          if ((forward && i < text.length) || (!forward && i >= -1)) {
-            setDisplayText(text.substring(0, i + 1));
-            i += (forward ? 1 : -1);
-          } else {
-            if (!erase) {
-              console.log("Done " + id);
-              if (nextId) {
-                setActive(nextId);
-              }
-              clearInterval(typingInterval);
-            } else {
-              setTimeout(() => {
-                erase = false;
-                forward = false;
-              }, 2000);
-            }
-          }
-        }, speed);
-  
-        return () => {
-          clearInterval(typingInterval);
-        };
-      } 
-    }, [text, speed, id, nextId, active]);
-  
-    return displayText;
-};
-// --------------------------
-type TypewriterProps = {
-    text: string;
-    speed?: number;
-    textSetting?: string;
-    erase?: boolean;
-    id: number;
-    nextId?: number;
-    active: number;
-    setActive: (id: number) => void;
-};
+import Typewriter from '~/lib/typewriter';
 
-export const Typewriter = ({ text, speed = 50, textSetting = "text-4xl", erase = false, id, nextId, active, setActive }: TypewriterProps) => {
-    const displayText = useTypewriter(text, speed, erase, id, nextId, active, setActive);
-  
-    return (
-      <p className={`${textSetting}`}>
-        {displayText}
-      </p>
-    );
-};
+// ====================================================================================================
 
 //****************************************************************************************************
 export default function LandingPage() {
     const [active, setActive] = useState(0);
     const careers = [
-        "programmer",
-        "software developer",
-        "penetration tester",
-        "researcher"
+        {
+          text: "programmer",
+          setting: "text-4xl text-cyan-500"
+        },
+        {
+          text: "software developer",
+          setting: "text-4xl text-green-500"
+        },
+        {
+          text: "penetration tester",
+          setting: "text-4xl text-red-500"
+        },
+        {
+          text: "researcher",
+          setting: "text-4xl text-gray-500"
+        },
     ]
   
     return (
@@ -75,8 +33,8 @@ export default function LandingPage() {
             </div>
             <div className="flex justify-center items-center">
                 {
-                    careers.map((text, index) => (
-                        <Typewriter key={index} text={text} textSetting="text-4xl text-red-500" erase={true} id={index+1} nextId={index+1===careers.length ? 1 : index+2} setActive={setActive} active={active} />
+                    careers.map((career, index) => (
+                        <Typewriter key={index} text={career.text} textSetting={career.setting} erase={true} id={index+1} nextId={index+1===careers.length ? 1 : index+2} setActive={setActive} active={active} />
                     ))
                 }
             </div>
