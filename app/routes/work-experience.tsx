@@ -1,56 +1,26 @@
-import { LogoPromithicWithText } from "~/assets/promithic-logo";
-import { useState, useEffect } from 'react';
+import { LogoPromithic, LogoPromithicWithText } from "~/assets/promithic-logo";
+import FlippingLogo from "~/lib/flipping-logo";
 // ====================================================================================================
 
 //****************************************************************************************************
 export default function WorkExperience()
 {
-    useEffect(() => {
-        const element = document.getElementById('animateElement');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    element.classList.add('scale-x-[-1]');
-                    
-                    setTimeout(() => {
-                        element.classList.add('scale-x-[1]');
-                    }, 1000); // Adjust the timing as needed
-                    // Optional: Stop observing once the animation is triggered
-                    // observer.unobserve(element); 
-                }
-                setTimeout(() => {
-                    element.classList.remove('scale-x-[-1]');
-                    element.classList.remove('scale-x-[1]');
-                }, 2000); // Adjust the timing as needed
-                // Optional: Stop observing once the animation is triggered
-                // observer.unobserve(element); 
-
-
-            });
-        }, {
-            threshold: 0.1 // Trigger when at least 10% of the element is visible
-        });
-
-        observer.observe(element);
-    }, []);
-    
     return (
-        
-            <div className="relative w-full p-5 border-4">
+            <div className="relative w-full p-5">
                 <div className="flex jusity-center items-center 
-                                text-4xl text-white border-b-2">
+                                text-4xl text-white">
                     Experience
                 </div>
 
-                <div className="mt-10 w-full border">
-                    <div id="animateElement" className="h-fit w-fit transform transition-transform duration-1000">
-                        <LogoPromithicWithText/>
+                <div className="mt-10 w-full">
+                    <div id="logo1" className="h-10 w-10">
+                        <LogoPromithic/>
                     </div>
                 </div>
                 
-            </div>
-            
+                <FlippingLogo id="logo1" flipCount={3}/>
+            </div>            
     );
     
 }

@@ -47,7 +47,8 @@ return (
       <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                         text-white text-xl`}>
         { routes.map((route, index) => (
-          <NavLink  to={route.link} 
+          <NavLink  key={index}
+                    to={route.link} 
                     className="mx-3 text-white"
                     style={({ isActive, isPending }) => {
                       return {
@@ -62,7 +63,7 @@ return (
       {/* -------------------------- */}
       <div className="ml-auto flex items-center space-x-3">
         { profileLinks.map((profile, key) => (
-            <a  href={profile.href} 
+            <a  href={profile.href}  key={key}
                 className={`h-10 w-10 flex items-center justify-center
                             grayscale transition hover:grayscale-0 focus:grayscale-0`}>
               { profile.icon }
