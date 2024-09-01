@@ -9,19 +9,19 @@ export default function LandingPage() {
     const careers = [
         {
           text: "programmer",
-          setting: "text-4xl text-cyan-500"
+          setting: "text-4xl text-blue-600"
         },
         {
           text: "software developer",
-          setting: "text-4xl text-green-500"
+          setting: "text-4xl text-teal-600"
         },
         {
           text: "penetration tester",
-          setting: "text-4xl text-red-500"
+          setting: "text-4xl text-red-600"
         },
         {
           text: "researcher",
-          setting: "text-4xl text-gray-500"
+          setting: "text-4xl text-purple-600"
         },
     ]
   

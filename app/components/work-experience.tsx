@@ -1,4 +1,4 @@
-import PromithicLogo from "~/assets/promithic-logo";
+import { LogoPromithicWithText } from "~/assets/promithic-logo";
 import { useState, useEffect } from 'react';
 // ====================================================================================================
 
@@ -45,7 +45,7 @@ export default function WorkExperience()
 
                 <div className="mt-10 w-full border">
                     <div id="animateElement" className="h-fit w-fit transform transition-transform duration-1000">
-                        <PromithicLogo/>
+                        <LogoPromithicWithText/>
                     </div>
                 </div>
                 
