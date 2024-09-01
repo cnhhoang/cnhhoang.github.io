@@ -34,7 +34,7 @@ export default function App() {
         <Links />
       </head>
 
-      <body className="mt-10 h-full">
+      <body>
         <FixedHeader/>
         <Outlet />
         
