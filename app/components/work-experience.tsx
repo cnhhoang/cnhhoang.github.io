@@ -33,7 +33,7 @@ export default function WorkExperience()
         });
 
         observer.observe(element);
-    }, []); // Empty dependency array ensures this runs once on mount
+    }, []);
     
     return (
         

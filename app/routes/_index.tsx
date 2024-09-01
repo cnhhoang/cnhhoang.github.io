@@ -2,6 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import { useState } from 'react';
 import Typewriter from '~/lib/typewriter';
 import { useOptionalUser } from "~/utils";
+import Footer from "~/components/footer";
 
 //====================================================================================================
 export const meta: MetaFunction = () => [{ title: "Hoang Chung" }];
@@ -47,6 +48,7 @@ export default function Index() {
             </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

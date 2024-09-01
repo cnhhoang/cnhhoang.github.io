@@ -20,11 +20,10 @@ export default function FixedHeader()
   ];
 
   return (
-    <Sheet open={true} modal={false}>
-      <SheetContent side={"top"}  
-                    className = {`h-10 w-full flex items-center shadow-2xl
-                                  focus:border-transparent select-none
-                                  bg-gradient-to-r from-slate-900 via-slate-900 to-blue-800 `}
+      <div className={`sticky top-0 h-12 w-full 
+                      flex items-center px-5
+                      focus:border-transparent select-none
+                      bg-gradient-to-r from-slate-900 via-slate-900 to-blue-800 `}
       >
         <div className="text-2xl text-white font-serif	">
           Hoang Chung
@@ -40,7 +39,6 @@ export default function FixedHeader()
             ))
           }
         </div>
-      </SheetContent>
-    </Sheet>
+      </div>
   );
 }
