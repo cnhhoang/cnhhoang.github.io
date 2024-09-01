@@ -34,9 +34,11 @@ export default function App() {
         <Links />
       </head>
 
-      <body>
+      <body className="min-h-screen h-screen">
         <FixedHeader/>
-        <Outlet />
+        <div className="min-h-[calc(100vh-3rem)] h-[calc(100vh-3rem)] bg-gradient-to-b from-slate-900 to-blue-800">
+          <Outlet />
+        </div>
         
         <ScrollRestoration />
         <Scripts />

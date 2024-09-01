@@ -2,7 +2,6 @@ import type { MetaFunction } from "@remix-run/node";
 import { useState } from 'react';
 import Typewriter from '~/lib/typewriter';
 import { useOptionalUser } from "~/utils";
-import Footer from "~/components/footer";
 
 //====================================================================================================
 export const meta: MetaFunction = () => [{ title: "Hoang Chung" }];
@@ -33,8 +32,7 @@ export default function Index() {
 //****************************************************************************************************  
   return (
     // <div className={`min-h-screen bg-gradient-to-b from-sky-950 via-cyan-900 to-blue-950`}>
-    <div className={`min-h-screen bg-gradient-to-b from-slate-900 to-blue-800`}>
-      <div className="h-screen w-full flex flex-col justify-center items-center focus:border-transparent select-none">
+      <div className="h-full w-full flex flex-col justify-center items-center focus:border-transparent select-none">
         <div className = "grid grid-rows-2">
             <div className="flex justify-center items-center">
                 <Typewriter text="Unlocking potential as a " textSetting="text-4xl text-white" id={0} nextId={1} setActive={setActive} active={active} />
@@ -47,8 +45,6 @@ export default function Index() {
                 }
             </div>
         </div>
-      </div>
-      <Footer/>
     </div>
   );
 }
