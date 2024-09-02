@@ -9,6 +9,7 @@ import {
   } from "~/components/ui/accordion";
 import { Content } from "@radix-ui/react-accordion";
 // ====================================================================================================
+export const meta: MetaFunction = () => [{ title: "Hoang Chung - Experience" }];
 
 //****************************************************************************************************
 export default function WorkExperience()
