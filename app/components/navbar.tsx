@@ -1,4 +1,4 @@
-import { NavLink } from "@remix-run/react";
+import { Link, NavLink } from "@remix-run/react";
 import CodeforcesLogo from "~/assets/codeforces-logo";
 import LinkedInLogo from "~/assets/linkedn-logo";
 
@@ -28,6 +28,7 @@ const routes = [
     link: "education"
   },
 ];
+const whitelist = ["rounded-lg", "tezt-green-500"];
 
 return (
     <div className={`relative sticky top-0 h-12 w-full 
@@ -36,23 +37,33 @@ return (
                     bg-gradient-to-r from-slate-900 via-slate-900 to-blue-800 `}
     >
       {/* -------------------------- */}
-      <div className="text-2xl text-white font-serif	">
+      <NavLink  
+        to="/" 
+        className={({ isActive }) =>
+          `text-2xl font-serif px-2 py-1 relative transition-colors duration-300
+          ${isActive ? 'text-blue-500' : 'text-white'}`
+        }>
         Hoang Chung
-      </div>
+      </NavLink>
+   
+
       {/* -------------------------- */}
       <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                         text-white text-xl`}>
         { routes.map((route, index) => (
-          <NavLink  
-            key={index}
-            to={route.link} 
-            className={({ isActive }) =>
-              `mx-3 px-2 py-1 relative text-white transition-colors duration-300 border-2 border-transparent rounded-lg 
-              after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-lg after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-              ${isActive ? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}`
-            }>
-            {route.display}
-          </NavLink>
+<NavLink  
+    key={index}
+    to={route.link} 
+    className={({ isActive }) =>
+      `mx-3 px-2 py-1 relative transition-all duration-300 transform 
+      border-2 border-transparent rounded-lg 
+      after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-lg after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
+      ${isActive ? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
+      hover:text-green-500 hover:scale-110`
+    }>
+    {route.display}
+</NavLink>
+
         ))}
       </div>
       {/* -------------------------- */}
