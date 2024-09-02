@@ -2,7 +2,7 @@ import { NavLink } from "@remix-run/react";
 import CodeforcesLogo from "~/assets/codeforces-logo";
 import LinkedInLogo from "~/assets/linkedn-logo";
 
-export default function FixedHeader()
+export default function NavBar()
 {
 const profileLinks = [
   {
@@ -43,18 +43,17 @@ return (
       <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                         text-white text-xl`}>
         { routes.map((route, index) => (
-          <NavLink  key={index}
-                    to={route.link} 
-                    className="mx-3 text-white"
-                    style={({ isActive, isPending }) => {
-                      return {
-                        color: isActive ? "red" : "white",
-                      };
-                    }}>
+          <NavLink  
+            key={index}
+            to={route.link} 
+            className={({ isActive }) =>
+              `mx-3 px-2 py-1 relative text-white transition-colors duration-300 border-2 border-transparent rounded-lg 
+              after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-lg after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
+              ${isActive ? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}`
+            }>
             {route.display}
           </NavLink>
-        ))
-        }
+        ))}
       </div>
       {/* -------------------------- */}
       <div className="ml-auto flex items-center space-x-3">

@@ -12,6 +12,7 @@ import {
 import FixedHeader from "~/components/fixed-header";
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
+import NavBar from "./components/navbar";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -35,7 +36,7 @@ export default function App() {
       </head>
 
       <body className="min-h-screen h-screen">
-        <FixedHeader/>
+        <NavBar/>
         <div className="min-h-[calc(100vh-3rem)] h-[calc(100vh-3rem)] bg-gradient-to-b from-slate-900 to-blue-800">
           <Outlet />
         </div>
