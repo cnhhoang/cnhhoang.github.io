@@ -1,7 +1,3 @@
-import {
-  Sheet,
-  SheetContent,
-} from "~/components/ui/sheet";
 import { NavLink } from "@remix-run/react";
 import CodeforcesLogo from "~/assets/codeforces-logo";
 import LinkedInLogo from "~/assets/linkedn-logo";
