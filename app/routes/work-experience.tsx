@@ -1,4 +1,5 @@
-import { LogoPromithic, LogoPromithic2, LogoPromithicWithText } from "~/assets/promithic-logo";
+import type { MetaFunction } from "@remix-run/node";
+import { LogoPromithic } from "~/assets/promithic-logo";
 import LogoHCMUS from "~/assets/images/HCMUS.png";
 import FlippingLogo from "~/lib/flipping-logo";
 import {
@@ -7,7 +8,6 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "~/components/ui/accordion";
-import { Content } from "@radix-ui/react-accordion";
 // ====================================================================================================
 export const meta: MetaFunction = () => [{ title: "Hoang Chung - Experience" }];
 

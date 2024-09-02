@@ -20,12 +20,20 @@ const routes = [
     link: "/"
   },
   {
+    display: "About",
+    link: "about"
+  },
+  {
     display: "Experience",
     link: "work-experience"
   },
   {
     display: "Education",
     link: "education"
+  },
+  {
+    display: "Connect",
+    link: "connect"
   },
 ];
 const whitelist = ["rounded-lg", "tezt-green-500"];

@@ -9,7 +9,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import FixedHeader from "~/components/fixed-header";
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 import NavBar from "./components/navbar";
