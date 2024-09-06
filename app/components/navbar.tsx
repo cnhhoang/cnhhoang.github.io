@@ -38,7 +38,7 @@ return (
     <div className={`relative sticky top-0 h-12 w-full 
                     flex items-center px-5
                     focus:border-transparent select-none
-                    bg-gradient-to-r from-slate-900 via-slate-900 via-80% to-indigo-900 `}
+                    bg-gradient-to-r from-slate-900 via-slate-900 via-75% to-indigo-900`}
     >
       {/* -------------------------- */}
       <NavLink  

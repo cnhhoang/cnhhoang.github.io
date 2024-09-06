@@ -1,13 +1,13 @@
 
-import { LogoPromithic } from "~/assets/promithic-logo";
 import LogoHCMUS from "~/assets/images/HCMUS.png";
-import FlippingLogo from "~/lib/flipping-logo";
+import { LogoPromithic } from "~/assets/promithic-logo";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
   } from "~/components/ui/accordion";
+import FlippingLogo from "~/lib/flipping-logo";
 // ====================================================================================================
 
 //****************************************************************************************************
@@ -19,7 +19,7 @@ export default function WorkExperience()
                 <div id="promithic" className="h-fit w-10 mr-2 none-select ">
                     <LogoPromithic/>
                 </div>),
-            company: "Promithic",
+            organization: "Promithic",
             title: "Junior Software Developer - Penetration Tester",
             duration: "July 2024 - Present",
             description: [
@@ -33,7 +33,7 @@ export default function WorkExperience()
                     <img src={LogoHCMUS} />
                 </div>
             ),
-            company: "SELAB",
+            organization: "SELAB",
             title: "Research Intern",
             duration: "May 2019 – September 2020",
             description: [
@@ -52,14 +52,14 @@ export default function WorkExperience()
                 </div>
 
                 <Accordion type="multiple" className="mt-10 w-full none-select">
-                    {history.map((job, index) => (
-                        <AccordionItem value={job.company}>
+                    {history.map((job) => (
+                        <AccordionItem value={job.organization}>
                             <AccordionTrigger className="none-select">
                                 <div className="flex none-select">
                                     {job.logo()}
                                     <div className="flex flex-col items-start none-select">
                                         <div className="text-2xl">
-                                            {job.company}
+                                            {job.organization}
                                         </div>
                                         <div className="">
                                             {job.title}
