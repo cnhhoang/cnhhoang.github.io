@@ -1,4 +1,4 @@
-const CodeforcesLogo = () => (
+export const LogoCodeforces = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       fill="#2196F3"
@@ -26,4 +26,4 @@ const CodeforcesLogo = () => (
     />
   </svg>
 )
-export default CodeforcesLogo
+

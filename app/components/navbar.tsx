@@ -1,17 +1,17 @@
 import { NavLink } from "@remix-run/react";
 
-import CodeforcesLogo from "~/assets/codeforces-logo";
-import LinkedInLogo from "~/assets/linkedn-logo";
+import { LogoCodeforces } from "~/assets/logo-codeforces";
+import { LogoLinkedIn } from "~/assets/logo-linkedin";
 
 export default function NavBar()
 {
 const profileLinks = [
   {
-    "icon": <CodeforcesLogo/>,
+    "icon": <LogoCodeforces/>,
     "href": "https://codeforces.com/profile/BlueHya",
   },
   {
-    "icon": <LinkedInLogo/>,
+    "icon": <LogoLinkedIn/>,
     "href": "https://www.linkedin.com/in/hoang-chung-8932a2325/",
   },
 ];

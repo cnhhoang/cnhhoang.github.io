@@ -8,42 +8,42 @@ import {
     AccordionTrigger,
   } from "~/components/ui/accordion";
 import FlippingLogo from "~/lib/flipping-logo";
+
 // ====================================================================================================
+const history = [
+    {
+        logo: () => (
+            <div id="promithic" className="h-fit w-10 mr-2 none-select ">
+                <LogoPromithic/>
+            </div>),
+        organization: "Promithic",
+        title: "Junior Software Developer - Penetration Tester",
+        duration: "July 2024 - Present",
+        description: [
+            "Constructed a full web stack, with ongoing upgrades and data migration under the supervision of a senior lead. Developed a web platform as the only full-stack developer, ensuring high performance, maintainability, scalability, and reusability. Maintained thorough documentation and comprehensive history throughout the process. Additional details are confidential under an NDA.",
+            "Performed penetration testing following the standards outlined in the OWASP Testing Guide. Solved more than 100 PortSwigger labs, progressing towards Burp Suite Certified Practitioner certification."
+        ],
+    },
+    {
+        logo: () => (
+            <div id="selab" className="h-fit w-12 none-select">
+                <img src={LogoHCMUS} />
+            </div>
+        ),
+        organization: "SELAB",
+        title: "Research Intern",
+        duration: "May 2019 – September 2020",
+        description: [
+            "Conducted research and published two papers on Encrypted Database. The works were peer-reviewed and accepted in international conferences. Honored with the Best Paper Award at SoICT2019.",
+            "Optimized the algorithm’s performance by approximately 20 times by applying Lazy Propagation into Segment Tree data structure."
+        ],
+    },
+
+];
 
 //****************************************************************************************************
 export default function WorkExperience()
 {   
-    const history = [
-        {
-            logo: () => (
-                <div id="promithic" className="h-fit w-10 mr-2 none-select ">
-                    <LogoPromithic/>
-                </div>),
-            organization: "Promithic",
-            title: "Junior Software Developer - Penetration Tester",
-            duration: "July 2024 - Present",
-            description: [
-                "Constructed a full web stack, with ongoing upgrades and data migration under the supervision of a senior lead. Developed a web platform as the only full-stack developer, ensuring high performance, maintainability, scalability, and reusability. Maintained thorough documentation and comprehensive history throughout the process. Additional details are confidential under an NDA.",
-                "Performed penetration testing following the standards outlined in the OWASP Testing Guide. Solved more than 100 PortSwigger labs, progressing towards Burp Suite Certified Practitioner certification."
-            ],
-        },
-        {
-            logo: () => (
-                <div id="selab" className="h-fit w-12 none-select">
-                    <img src={LogoHCMUS} />
-                </div>
-            ),
-            organization: "SELAB",
-            title: "Research Intern",
-            duration: "May 2019 – September 2020",
-            description: [
-                "Conducted research and published two papers on Encrypted Database. The works were peer-reviewed and accepted in international conferences. Honored with the Best Paper Award at SoICT2019.",
-                "Optimized the algorithm’s performance by approximately 20 times by applying Lazy Propagation into Segment Tree data structure."
-            ],
-        },
-
-    ];
-
     return (
             <div className="relative w-full p-5 text-white">
                 <div className="flex jusity-center items-center 
