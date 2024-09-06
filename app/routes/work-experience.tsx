@@ -86,5 +86,23 @@ export default function WorkExperience()
                 <FlippingLogo id="selab" flipCount={4}/>
             </div>            
     );
-    
+
+    // CHANGING TO CAROUSEL
+    // return (
+    //     <div className="h-full w-full flex items-center justify-center border-4">
+    //         <Carousel className="w-full max-w-lg h-full border-2 flex">
+    //             <CarouselContent>
+    //             { history.map((item, index) => (
+    //                 <CarouselItem>
+                        
+    //                     {item.title}
+    //                 </CarouselItem>
+    //             ))
+    //             }
+    //             </CarouselContent>
+    //             <CarouselPrevious />
+    //             <CarouselNext />
+    //         </Carousel>
+    //     </div>
+    // );
 }
