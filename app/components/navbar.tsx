@@ -1,4 +1,5 @@
-import { Link, NavLink } from "@remix-run/react";
+import { NavLink } from "@remix-run/react";
+
 import CodeforcesLogo from "~/assets/codeforces-logo";
 import LinkedInLogo from "~/assets/linkedn-logo";
 
@@ -32,7 +33,6 @@ const routes = [
     link: "education"
   },
 ];
-const whitelist = ["rounded-lg", "tezt-green-500"];
 
 return (
     <div className={`relative sticky top-0 h-12 w-full 

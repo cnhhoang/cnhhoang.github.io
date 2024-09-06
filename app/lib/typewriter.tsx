@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 // ====================================================================================================
 
-type TypewriterProps = {
+interface TypewriterProps {
   text: string;
   speed?: number;
   textSetting?: string;
@@ -11,7 +11,7 @@ type TypewriterProps = {
   nextId?: number;
   active: number;
   setActive: (id: number) => void;
-};
+}
 // --------------------------
 
 export default function Typewriter({ text, speed = 50, textSetting = "text-4xl", erase = false, id, nextId, active, setActive }: TypewriterProps)
