@@ -1,10 +1,8 @@
-import type { MetaFunction } from "@remix-run/node";
 import { useState } from 'react';
 import Typewriter from '~/lib/typewriter';
 import { useOptionalUser } from "~/utils";
 
 //====================================================================================================
-export const meta: MetaFunction = () => [{ title: "Hoang Chung" }];
 
 //====================================================================================================
 export default function Index() {

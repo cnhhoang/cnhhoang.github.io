@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+
 import { LogoPromithic } from "~/assets/promithic-logo";
 import LogoHCMUS from "~/assets/images/HCMUS.png";
 import FlippingLogo from "~/lib/flipping-logo";
@@ -9,7 +9,6 @@ import {
     AccordionTrigger,
   } from "~/components/ui/accordion";
 // ====================================================================================================
-export const meta: MetaFunction = () => [{ title: "Hoang Chung - Experience" }];
 
 //****************************************************************************************************
 export default function WorkExperience()
@@ -17,7 +16,7 @@ export default function WorkExperience()
     const history = [
         {
             logo: () => (
-                <div id="promithic" className="h-fit w-10 mr-2 none-select">
+                <div id="promithic" className="h-fit w-10 mr-2 none-select ">
                     <LogoPromithic/>
                 </div>),
             company: "Promithic",
@@ -83,7 +82,7 @@ export default function WorkExperience()
                     ))}
                 </Accordion>                
                 
-                <FlippingLogo id="promithic" flipCount={3}/>
+                <FlippingLogo id="promithic" flipCount={4}/>
                 <FlippingLogo id="selab" flipCount={4}/>
             </div>            
     );

@@ -39,6 +39,7 @@ export const LogoPromithicWithText = () => (
 )
 // --------------------------
 export const LogoPromithic = () => (
+  <div className="scale-x-[-1]">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 208.68">
     <title>{"cutAsset 2logo_final"}</title>
     <g data-name="Layer 2">
@@ -85,6 +86,7 @@ export const LogoPromithic = () => (
       </g>
     </g>
   </svg>
+  </div>
 )
 // --------------------------
 export const LogoPromithic2 = () => (
