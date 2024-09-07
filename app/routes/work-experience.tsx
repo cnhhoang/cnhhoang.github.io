@@ -13,7 +13,7 @@ import {
 const history = [
     {
         logo: () => (
-            <div id="promithic" className="w-96 h-fit mr-2 none-select ">
+            <div id="promithic" className="w-96 h-fit mr-2 none-select">
                 <LogoPromithicWithText />
             </div>
         ),
@@ -27,8 +27,9 @@ const history = [
     },
     {
         logo: () => (
-            <div id="selab" className="h-fit w-12 none-select">
+            <div id="selab" className="w-[4.5rem] h-fit mr-2 none-select flex justify-center items-center none-select">
                 <img src={LogoHCMUS} />
+                <div className="text-7xl text-blue-900 none-select"> SELAB </div>
             </div>
         ),
         organization: "SELAB",
@@ -39,7 +40,6 @@ const history = [
             "Optimized the algorithm’s performance by approximately 20 times by applying Lazy Propagation into Segment Tree data structure."
         ],
     },
-
 ];
 
 //****************************************************************************************************
@@ -91,18 +91,30 @@ export default function WorkExperience()
     // CHANGING TO CAROUSEL
     return (
         <div className="h-full w-full flex items-center justify-center">
-            <Carousel className="w-full max-w-lg h-full border flex">
-                <CarouselContent className="border-2">
-                { history.map((entry, index) => (
-                    <CarouselItem className="" key={index}>
-                        <div className="w-full flex items-center justify-center">
-                            {entry.logo()}
-                        </div>
-                        
-                    </CarouselItem>
-                ))
-                }
+            <Carousel className="w-full max-w-lg h-full flex justify-center">
+                <CarouselContent className="h-full w-full">
+                    { history.map((entry, index) => (
+                        <CarouselItem className="p-5 w-full h-full flex flex-col" key={index}>
+                            <div className="w-full flex justify-center">
+                                {entry.logo()}
+                            </div>
+
+                            <div className="mt-3 text-white text-xl">
+                                {entry.title}
+                            </div>
+                            <div className="mt-1 mb-5 text-gray-400 text-xl">
+                                {entry.duration}
+                            </div>
+
+                            {entry.description.map((description, index) => (
+                                <li key={index} className="text-slate-400">
+                                    {description}
+                                </li>
+                            ))}                            
+                        </CarouselItem>
+                    ))}
                 </CarouselContent>
+
                 <CarouselPrevious />
                 <CarouselNext />
             </Carousel>
