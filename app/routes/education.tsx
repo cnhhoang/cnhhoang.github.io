@@ -62,7 +62,11 @@ const history = [
         title: "Majoring in Information Technology",
         duration: "2013 - 2016",
         description: [
-            "Ranked 1st in HCM Programming Contest for Highschool Students, 2016.",
+            "Valedictorian of Ho Chi Minh City's academic excellence competition in computer science, 2016.",
+            "Prize in Vietnam National Olympiad in Informatics, 2016.",
+            "Gold medal in the April 30th Olympic competition for computer science, 2015.",
+            "Gold medal in the April 30th Olympic competition for computer science, 2014.",
+            "Scholarships for excellent academic performance.",
         ],
     },    
 ];
