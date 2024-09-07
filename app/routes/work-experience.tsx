@@ -1,21 +1,22 @@
 
 import LogoHCMUS from "~/assets/images/HCMUS.png";
-import { LogoPromithic } from "~/assets/promithic-logo";
+import { LogoPromithic, LogoPromithic2, LogoPromithicWithText } from "~/assets/promithic-logo";
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-  } from "~/components/ui/accordion";
-import FlippingLogo from "~/lib/flipping-logo";
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+  } from "~/components/ui/carousel"
 
 // ====================================================================================================
 const history = [
     {
         logo: () => (
-            <div id="promithic" className="h-fit w-10 mr-2 none-select ">
-                <LogoPromithic/>
-            </div>),
+            <div id="promithic" className="w-96 h-fit mr-2 none-select ">
+                <LogoPromithicWithText />
+            </div>
+        ),
         organization: "Promithic",
         title: "Junior Software Developer - Penetration Tester",
         duration: "July 2024 - Present",
@@ -44,65 +45,67 @@ const history = [
 //****************************************************************************************************
 export default function WorkExperience()
 {   
-    return (
-            <div className="relative w-full p-5 text-white">
-                <div className="flex jusity-center items-center 
-                                text-4xl text-white">
-                    Experience
-                </div>
+    // return (
+    //         <div className="relative w-full p-5 text-white">
+    //             <div className="flex jusity-center items-center 
+    //                             text-4xl text-white">
+    //                 Experience
+    //             </div>
 
-                <Accordion type="multiple" className="mt-10 w-full none-select">
-                    {history.map((job) => (
-                        <AccordionItem value={job.organization}>
-                            <AccordionTrigger className="none-select">
-                                <div className="flex none-select">
-                                    {job.logo()}
-                                    <div className="flex flex-col items-start none-select">
-                                        <div className="text-2xl">
-                                            {job.organization}
-                                        </div>
-                                        <div className="">
-                                            {job.title}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="ml-auto mr-5">
-                                    {job.duration}
-                                </div>
-                            </AccordionTrigger>
+    //             <Accordion type="multiple" className="mt-10 w-full none-select">
+    //                 {history.map((job) => (
+    //                     <AccordionItem value={job.organization}>
+    //                         <AccordionTrigger className="none-select">
+    //                             <div className="flex none-select">
+    //                                 {job.logo()}
+    //                                 <div className="flex flex-col items-start none-select">
+    //                                     <div className="text-2xl">
+    //                                         {job.organization}
+    //                                     </div>
+    //                                     <div className="">
+    //                                         {job.title}
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
+    //                             <div className="ml-auto mr-5">
+    //                                 {job.duration}
+    //                             </div>
+    //                         </AccordionTrigger>
 
-                            <AccordionContent>
-                                {job.description.map((content, index) => (
-                                    <li key={index}>
-                                        {content}
-                                    </li>
-                                ))}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>                
+    //                         <AccordionContent>
+    //                             {job.description.map((content, index) => (
+    //                                 <li key={index}>
+    //                                     {content}
+    //                                 </li>
+    //                             ))}
+    //                         </AccordionContent>
+    //                     </AccordionItem>
+    //                 ))}
+    //             </Accordion>                
                 
-                <FlippingLogo id="promithic" flipCount={4}/>
-                <FlippingLogo id="selab" flipCount={4}/>
-            </div>            
-    );
+    //             <FlippingLogo id="promithic" flipCount={4}/>
+    //             <FlippingLogo id="selab" flipCount={4}/>
+    //         </div>            
+    // );
 
     // CHANGING TO CAROUSEL
-    // return (
-    //     <div className="h-full w-full flex items-center justify-center border-4">
-    //         <Carousel className="w-full max-w-lg h-full border-2 flex">
-    //             <CarouselContent>
-    //             { history.map((item, index) => (
-    //                 <CarouselItem>
+    return (
+        <div className="h-full w-full flex items-center justify-center">
+            <Carousel className="w-full max-w-lg h-full border flex">
+                <CarouselContent className="border-2">
+                { history.map((entry, index) => (
+                    <CarouselItem className="" key={index}>
+                        <div className="w-full flex items-center justify-center">
+                            {entry.logo()}
+                        </div>
                         
-    //                     {item.title}
-    //                 </CarouselItem>
-    //             ))
-    //             }
-    //             </CarouselContent>
-    //             <CarouselPrevious />
-    //             <CarouselNext />
-    //         </Carousel>
-    //     </div>
-    // );
+                    </CarouselItem>
+                ))
+                }
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
+        </div>
+    );
 }

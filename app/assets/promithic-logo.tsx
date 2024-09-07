@@ -3,8 +3,6 @@ export const LogoPromithicWithText = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    width={185}
-    height={35}
     style={{
       fillRule: "evenodd",
       clipRule: "evenodd",
