@@ -20,7 +20,7 @@ const history = [
             </div>),
         organization: "Monash University",
         title: "Master of Cybersecurity",
-        duration: "July 2022 - July - 2024",
+        duration: "July 2022 - July 2024",
         description: [
             "Master degree awarded with distinction (WAM above 80).",
             "Thesis accepted and presented as a full paper at ProvSec2024 (acceptance rate 33%).",
