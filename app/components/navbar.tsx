@@ -58,7 +58,7 @@ return (
               key={index}
               to={route.link} 
               className={({ isActive }) =>
-                `mx-3 px-3 py-1 relative transition-all duration-300 transform 
+                `mx-3 px-3 pb-1 relative transition-all duration-300 transform 
                 border-2 border-transparent rounded-full
                 after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
                 hover:text-green-500
