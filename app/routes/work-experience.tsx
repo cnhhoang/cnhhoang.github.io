@@ -29,7 +29,7 @@ const history = [
         logo: () => (
             <div id="selab" className="w-[4.5rem] h-fit mr-2 none-select flex justify-center items-center none-select">
                 <img src={LogoHCMUS} />
-                <div className="text-7xl text-blue-900 none-select"> SELAB </div>
+                <div className="text-7xl bg-gradient-to-r from-blue-900 via-sky-900 to-indigo-900 bg-clip-text text-transparent"> SELAB </div>
             </div>
         ),
         organization: "SELAB",
