@@ -32,6 +32,10 @@ const routes = [
     display: "Education",
     link: "education"
   },
+  {
+    display: "Portfolio",
+    link: "portfolio"
+  },
 ];
 
 return (
