@@ -149,12 +149,12 @@ jobs:
     needs: [typecheck, vitest]
     steps:
       - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ⎔ Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v1
         with:
           node-version: 18
 
@@ -165,7 +165,7 @@ jobs:
         run: npm run build
 
       - name: 📦 Upload artifact for GitHub Pages
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v1
         with:
           name: github-pages
           path: ./build
@@ -178,11 +178,13 @@ jobs:
       pages: write
       id-token: write
     if: ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name == 'push' }}
+    environment:
+      name: github-pages
     steps:
       - name: Configure Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v1
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
