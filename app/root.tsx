@@ -1,53 +1,56 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
-import type { MetaFunction , LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
 
-import { getUser } from "~/session.server";
-import stylesheet from "~/tailwind.css";
+import "./tailwind.css";
 
 import NavBar from "./components/navbar";
 
 // ====================================================================================================
-export const meta: MetaFunction = () => [{ title: "Hoang Chung" }];
-
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+  },
 ];
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return json({ user: await getUser(request) });
-};
-
 //****************************************************************************************************
-export default function App() {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-
       <body className="min-h-screen h-screen">
         <NavBar/>
         <div className="min-h-[calc(100vh-3rem)] h-[calc(100vh-3rem)] bg-gradient-to-b from-slate-900 to-blue-800">
-          <Outlet />
+          {children}
         </div>
-        
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
+}
+
+export default function App() {
+  return <Outlet />;
+}
+
+export function HydrateFallback() {
+  return <p>Loading...</p>;
 }

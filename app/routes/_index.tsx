@@ -1,13 +1,11 @@
 import { useState } from 'react';
 
 import Typewriter from '~/lib/typewriter';
-import { useOptionalUser } from "~/utils";
 
 //====================================================================================================
 
 //====================================================================================================
 export default function Index() {
-  const user = useOptionalUser();
   const [active, setActive] = useState(0);
   const careers = [
       {
