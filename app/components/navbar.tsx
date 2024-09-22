@@ -39,7 +39,7 @@ const routes = [
 ];
 
 return (
-    <div className={`relative sticky top-0 h-12 w-full 
+    <div className={`relative sticky top-0 h-12 w-full
                     flex items-center px-5
                     focus:border-transparent select-none
                     bg-gradient-to-r from-slate-900 via-slate-900 via-75% to-indigo-900`}
@@ -53,10 +53,11 @@ return (
         }>
         Hoang Chung
       </NavLink>
-   
 
       {/* -------------------------- */}
-      <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xl`}>
+      <div className={`absolute top-1/2 left-1/2 flex
+                      transform -translate-x-1/2 -translate-y-1/2 
+                      text-white text-xl`}>
         { routes.map((route, index) => (
           <NavLink  
               key={index}
@@ -73,6 +74,7 @@ return (
           </NavLink>
         ))}
       </div>
+      
       {/* -------------------------- */}
       <div className="ml-auto flex items-center space-x-3">
         { profileLinks.map((profile, key) => (
