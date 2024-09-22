@@ -1,6 +1,7 @@
 import { NavLink } from "@remix-run/react";
 
 import { LogoCodeforces } from "~/assets/logo-codeforces";
+import { LogoGoogleScholar } from "~/assets/logo-googlescholar";
 import { LogoLinkedIn } from "~/assets/logo-linkedin";
 
 export default function NavBar()
@@ -9,6 +10,10 @@ const profileLinks = [
   {
     "icon": <LogoCodeforces/>,
     "href": "https://codeforces.com/profile/BlueHya",
+  },
+  {
+    "icon": <LogoGoogleScholar/>,
+    "href": "https://scholar.google.com/citations?user=MGOtLrMAAAAJ&hl=en",
   },
   {
     "icon": <LogoLinkedIn/>,
@@ -74,7 +79,7 @@ return (
           </NavLink>
         ))}
       </div>
-      
+
       {/* -------------------------- */}
       <div className="ml-auto flex items-center space-x-3">
         { profileLinks.map((profile, key) => (

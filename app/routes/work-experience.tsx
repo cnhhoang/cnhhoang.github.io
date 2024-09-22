@@ -1,6 +1,6 @@
 
 import LogoHCMUS from "~/assets/images/HCMUS.png";
-import { LogoPromithic, LogoPromithic2, LogoPromithicWithText } from "~/assets/promithic-logo";
+import { LogoPromithicWithText } from "~/assets/logo-promithic";
 import {
     Carousel,
     CarouselContent,
