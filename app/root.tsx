@@ -25,6 +25,9 @@ export const links: LinksFunction = () => [
   },
 ];
 
+export const hScreenFit: string = "h-[calc(100vh-3rem)] ";
+
+//****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

@@ -4,6 +4,7 @@ import { LogoCodeforces } from "~/assets/logo-codeforces";
 import { LogoGoogleScholar } from "~/assets/logo-googlescholar";
 import { LogoLinkedIn } from "~/assets/logo-linkedin";
 
+//****************************************************************************************************
 export default function NavBar()
 {
 const profileLinks = [
