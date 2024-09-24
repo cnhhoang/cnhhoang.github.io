@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 
+// ====================================================================================================
 interface FlippingLogoProps {
     id: string;
     flipCount: number;
 }
 
+// ****************************************************************************************************
 const FlippingLogo: React.FC<FlippingLogoProps> = ({ id, flipCount }) => {
     useEffect(() => {
         const element = document.getElementById(id);

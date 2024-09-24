@@ -3,8 +3,6 @@ import { useState } from 'react';
 import Typewriter from '~/lib/typewriter';
 
 //====================================================================================================
-
-//====================================================================================================
 export default function Index() {
   const [active, setActive] = useState(0);
   const careers = [

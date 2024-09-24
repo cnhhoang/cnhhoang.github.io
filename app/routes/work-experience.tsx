@@ -1,5 +1,5 @@
 
-import LogoHCMUS from "~/assets/images/HCMUS.png";
+import LogoHCMUS from "~/assets/images/logo-hcmus.png";
 import { LogoPromithicWithText } from "~/assets/logo-promithic";
 import {
     Carousel,
@@ -45,50 +45,6 @@ const history = [
 //****************************************************************************************************
 export default function WorkExperience()
 {   
-    // return (
-    //         <div className="relative w-full p-5 text-white">
-    //             <div className="flex jusity-center items-center 
-    //                             text-4xl text-white">
-    //                 Experience
-    //             </div>
-
-    //             <Accordion type="multiple" className="mt-10 w-full none-select">
-    //                 {history.map((job) => (
-    //                     <AccordionItem value={job.organization}>
-    //                         <AccordionTrigger className="none-select">
-    //                             <div className="flex none-select">
-    //                                 {job.logo()}
-    //                                 <div className="flex flex-col items-start none-select">
-    //                                     <div className="text-2xl">
-    //                                         {job.organization}
-    //                                     </div>
-    //                                     <div className="">
-    //                                         {job.title}
-    //                                     </div>
-    //                                 </div>
-    //                             </div>
-    //                             <div className="ml-auto mr-5">
-    //                                 {job.duration}
-    //                             </div>
-    //                         </AccordionTrigger>
-
-    //                         <AccordionContent>
-    //                             {job.description.map((content, index) => (
-    //                                 <li key={index}>
-    //                                     {content}
-    //                                 </li>
-    //                             ))}
-    //                         </AccordionContent>
-    //                     </AccordionItem>
-    //                 ))}
-    //             </Accordion>                
-                
-    //             <FlippingLogo id="promithic" flipCount={4}/>
-    //             <FlippingLogo id="selab" flipCount={4}/>
-    //         </div>            
-    // );
-
-    // CHANGING TO CAROUSEL
     return (
         <div className="h-full w-full flex items-center justify-center">
             <Carousel className="w-full max-w-lg h-full flex justify-center">

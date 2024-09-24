@@ -1,6 +1,7 @@
-import LogoHCMUS from "~/assets/images/HCMUS.png";
-import LogoPTNK from "~/assets/images/LogoPTNK.jpg";
+import LogoHCMUS from "~/assets/images/logo-hcmus.png";
+import LogoPTNK from "~/assets/images/logo-ptnk.jpg";
 import { LogoMonash } from "~/assets/logo-monash";
+
 import {
     Accordion,
     AccordionContent,
@@ -40,13 +41,13 @@ const history = [
         duration: "2016 - 2020",
         description: [
             "First-class honours awarded (WAM above 80).",
-            "Research awarded with Best paper award in SoICT2019.",
+            "Research paper awarded with Best paper award in SoICT2019.",
             "Another research paper accepted and presented as a full paper at FDSE2019.",
             "3rd prize in Collegiate Information Security (CTF), South Vietnam, 2019.",
-            "2nd prize in Vietnam National Collegiate Programming Contest, 2018.",
+            "2nd prize in Vietnam National Collegiate Olympiad in Informatics, 2018.",
             "Ranked 48th (148 teams) in ACM-ICPC Asia HCMC Regional Contest, 2017.",
             "2nd prize (ranked 15/188) in ACM-ICPC Vietnam National Contest, 2017.",
-            "3rd prize in Vietnam National Collegiate Programming Contest, 2016.",
+            "3rd prize in Vietnam National Collegiate Olympiad in Informatics, 2016.",
             "Scholarships for excellent academic performance.",
         ],
     },    
@@ -61,8 +62,8 @@ const history = [
         title: "Majoring in Information Technology",
         duration: "2013 - 2016",
         description: [
-            "Valedictorian of Ho Chi Minh City's academic excellence competition in computer science, 2016.",
-            "Prize in Vietnam National Olympiad in Informatics, 2016.",
+            "Valedictorian of Ho Chi Minh City's Olympiad in Informatics, 2016.",
+            "Vietnam National Olympiad in Informatics, 2016.",
             "Gold medal in the April 30th Olympic competition for computer science, 2015.",
             "Gold medal in the April 30th Olympic competition for computer science, 2014.",
             "Scholarships for excellent academic performance.",

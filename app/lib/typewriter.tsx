@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 // ====================================================================================================
 
+// ****************************************************************************************************
 interface TypewriterProps {
   text: string;
   speed?: number;
@@ -12,7 +13,6 @@ interface TypewriterProps {
   active: number;
   setActive: (id: number) => void;
 }
-// --------------------------
 
 export default function Typewriter({ text, speed = 50, textSetting = "text-4xl", erase = false, id, nextId, active, setActive }: TypewriterProps)
 {    
@@ -26,7 +26,6 @@ export default function Typewriter({ text, speed = 50, textSetting = "text-4xl",
           i += (forward ? 1 : -1);
         } else {
           if (!erase) {
-            console.log("Done " + id);
             if (nextId) {
               setActive(nextId);
             }
