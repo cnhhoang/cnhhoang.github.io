@@ -1,11 +1,20 @@
 import { NavLink } from "@remix-run/react";
 
 import { LogoCodeforces } from "~/assets/logo-codeforces";
+import { LogoGmail } from "~/assets/logo-gmail";
 import { LogoGoogleScholar } from "~/assets/logo-googlescholar";
 import { LogoLinkedIn } from "~/assets/logo-linkedin";
 
 //====================================================================================================
 const profileLinks = [
+  {
+    "icon": <LogoGmail/>,
+    "href": "mailto:cnhhoang.sec@gmail.com",
+  },
+  {
+    "icon": <LogoLinkedIn/>,
+    "href": "https://www.linkedin.com/in/hoang-chung-8932a2325/",
+  },
   {
     "icon": <LogoCodeforces/>,
     "href": "https://codeforces.com/profile/BlueHya",
@@ -13,10 +22,6 @@ const profileLinks = [
   {
     "icon": <LogoGoogleScholar/>,
     "href": "https://scholar.google.com/citations?user=MGOtLrMAAAAJ&hl=en",
-  },
-  {
-    "icon": <LogoLinkedIn/>,
-    "href": "https://www.linkedin.com/in/hoang-chung-8932a2325/",
   },
 ];
 
