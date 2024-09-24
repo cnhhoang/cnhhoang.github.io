@@ -26,6 +26,7 @@ export const links: LinksFunction = () => [
 ];
 
 export const hScreenFit: string = "h-[calc(100vh-3rem)] ";
+export const backgroundColor: string = "bg-gradient-to-b from-slate-900 to-blue-800";
 
 //****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -39,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="min-h-screen h-screen">
         <NavBar/>
-        <div className="min-h-[calc(100vh-3rem)] bg-gradient-to-b from-slate-900 to-blue-800">
+        <div className={`min-h-[calc(100vh-3rem)] ${backgroundColor}`}>
           {children}
         </div>
         <ScrollRestoration />

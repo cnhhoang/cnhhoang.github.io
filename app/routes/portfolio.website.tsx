@@ -1,11 +1,11 @@
 // ====================================================================================================
 
 //****************************************************************************************************
-export default function Connect()
+export default function Website()
 {
     return (
-        <div>
-            Under development!
+        <div className="h-full w-full flex items-center justify-center">
+            Website: Under development!
         </div>
     );
 }
