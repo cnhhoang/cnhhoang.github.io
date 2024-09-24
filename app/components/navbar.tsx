@@ -8,10 +8,6 @@ import { LogoLinkedIn } from "~/assets/logo-linkedin";
 //====================================================================================================
 const profileLinks = [
   {
-    "icon": <LogoGmail/>,
-    "href": "mailto:cnhhoang.sec@gmail.com",
-  },
-  {
     "icon": <LogoLinkedIn/>,
     "href": "https://www.linkedin.com/in/hoang-chung-8932a2325/",
   },
@@ -23,14 +19,14 @@ const profileLinks = [
     "icon": <LogoGoogleScholar/>,
     "href": "https://scholar.google.com/citations?user=MGOtLrMAAAAJ&hl=en",
   },
+  {
+    "icon": <LogoGmail/>,
+    "href": "mailto:cnhhoang.sec@gmail.com",
+  },
 ];
 
 // --------------------------
 const routes = [
-  // {
-  //   display: "Home",
-  //   link: "/"
-  // },
   {
     display: "About",
     link: "about"
@@ -63,7 +59,7 @@ export default function NavBar()
           to="/" 
           className={({ isActive }) =>
             `text-2xl font-serif px-2 py-1 relative transition-colors duration-300
-            hover:text-blue-600 active:text-blue-300
+            hover:text-blue-400 active:text-blue-600
             ${isActive ? 'text-blue-500' : 'text-white'}`
           }>
           Hoang Chung
@@ -81,7 +77,7 @@ export default function NavBar()
                   `mx-3 px-3 pb-1 relative transition-all duration-300 transform 
                   border-2 border-transparent rounded-full
                   after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                  hover:text-green-500 active:text-green-400
+                  hover:text-green-400 active:text-green-600
                   ${isActive || isPending? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
                 `}>
                 {route.display}
