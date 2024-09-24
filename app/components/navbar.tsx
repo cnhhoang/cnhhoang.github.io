@@ -22,10 +22,10 @@ const profileLinks = [
 
 // --------------------------
 const routes = [
-  {
-    display: "Home",
-    link: "/"
-  },
+  // {
+  //   display: "Home",
+  //   link: "/"
+  // },
   {
     display: "About",
     link: "about"
@@ -38,10 +38,10 @@ const routes = [
     display: "Education",
     link: "education"
   },
-  // {
-  //   display: "Portfolio",
-  //   link: "portfolio"
-  // },
+  {
+    display: "Portfolio",
+    link: "portfolio"
+  },
 ];
 
 //****************************************************************************************************
@@ -58,6 +58,7 @@ export default function NavBar()
           to="/" 
           className={({ isActive }) =>
             `text-2xl font-serif px-2 py-1 relative transition-colors duration-300
+            hover:text-blue-600 active:text-blue-300
             ${isActive ? 'text-blue-500' : 'text-white'}`
           }>
           Hoang Chung
@@ -75,7 +76,7 @@ export default function NavBar()
                   `mx-3 px-3 pb-1 relative transition-all duration-300 transform 
                   border-2 border-transparent rounded-full
                   after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                  hover:text-green-500
+                  hover:text-green-500 active:text-green-400
                   ${isActive || isPending? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
                 `}>
                 {route.display}
