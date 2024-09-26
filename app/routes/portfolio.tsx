@@ -17,8 +17,8 @@ import { hScreenFit } from "~/root";
 
 // ====================================================================================================
 
-export const menuWidth: string = "w-72";
-export const wScreenFit: string = "w-[calc(100vw-18rem)]"
+export const menuWidth: string = "w-68";
+export const wScreenFit: string = "w-[calc(100vw-17rem)]"
 // ****************************************************************************************************
 export default function Portfolio()
 {
