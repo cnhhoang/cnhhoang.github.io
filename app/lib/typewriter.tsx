@@ -8,13 +8,21 @@ interface TypewriterProps {
   speed?: number;
   textSetting?: string;
   erase?: boolean;
-  id: number;
+  id?: number;
   nextId?: number;
-  active: number;
-  setActive: (id: number) => void;
+  active?: number;
+  setActive?: (id: number) => void;
 }
 
-export default function Typewriter({ text, speed = 50, textSetting = "text-4xl", erase = false, id, nextId, active, setActive }: TypewriterProps)
+export default function Typewriter({ 
+  text, 
+  speed = 50, 
+  textSetting = "", 
+  erase = false, 
+  id = 0, nextId, 
+  active = 0, 
+  setActive = () => {}
+}: TypewriterProps) 
 {    
   const [displayText, setDisplayText] = useState('');    
   useEffect(() => {

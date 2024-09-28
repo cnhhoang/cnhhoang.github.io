@@ -16,10 +16,17 @@ const config: Config = {
           '"Noto Color Emoji"',
         ],
       },
+      dropShadow: {
+        'remix-glow': '0 0 8px rgba(59, 130, 246, 0.8)', // Customize the size and color as needed
+      },
       keyframes: {
         slideIn: {
           '0%': { transform: 'translateX(100%)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         "accordion-down": {
           from: { height: "0" },
@@ -32,6 +39,7 @@ const config: Config = {
       },
       animation: {
         slideIn: 'slideIn 0.5s ease-out forwards',
+        fadeIn: 'fadeIn 1s ease-in forwards',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

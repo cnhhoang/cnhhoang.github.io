@@ -1,9 +1,6 @@
 import { NavLink } from "@remix-run/react";
 
-import { LogoCodeforces } from "~/assets/logo-codeforces";
-import { LogoGmail } from "~/assets/logo-gmail";
-import { LogoGoogleScholar } from "~/assets/logo-googlescholar";
-import { LogoLinkedIn } from "~/assets/logo-linkedin";
+import { LogoCodeforces, LogoGmail, LogoGoogleScholar, LogoLinkedIn } from "~/assets/logos";
 
 //====================================================================================================
 const profileLinks = [

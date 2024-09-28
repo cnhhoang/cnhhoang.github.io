@@ -1,6 +1,6 @@
 import LogoHCMUS from "~/assets/images/logo-hcmus.png";
 import LogoPTNK from "~/assets/images/logo-ptnk.jpg";
-import { LogoMonash } from "~/assets/logo-monash";
+import { LogoMonash } from "~/assets/logos";
 
 import {
     Accordion,

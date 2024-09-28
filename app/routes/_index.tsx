@@ -3,28 +3,29 @@ import { useState } from 'react';
 import Typewriter from '~/lib/typewriter';
 
 //====================================================================================================
-export default function Index() {
-  const [active, setActive] = useState(0);
-  const careers = [
-      {
-        text: "programmer",
-        setting: "text-4xl text-green-600"
-      },
-      {
-        text: "software developer",
-        setting: "text-4xl text-sky-600"
-      },
-      {
-        text: "penetration tester",
-        setting: "text-4xl text-red-600"
-      },
-      {
-        text: "researcher",
-        setting: "text-4xl text-purple-500"
-      },
-  ];
+const careers = [
+  {
+    text: "programmer",
+    setting: "text-4xl text-green-600"
+  },
+  {
+    text: "software developer",
+    setting: "text-4xl text-sky-600"
+  },
+  {
+    text: "penetration tester",
+    setting: "text-4xl text-red-600"
+  },
+  {
+    text: "researcher",
+    setting: "text-4xl text-purple-500"
+  },
+];
 
 //****************************************************************************************************  
+export default function Index() {
+  const [active, setActive] = useState(0);
+
   return (
     <div className="h-[calc(100vh-3rem)] w-full flex flex-col justify-center items-center focus:border-transparent select-none">
       <div className = "grid grid-rows-2">

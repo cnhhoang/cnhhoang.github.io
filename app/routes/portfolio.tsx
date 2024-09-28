@@ -3,11 +3,11 @@ import {
     useEffect, 
     useState,
 } from "react";
+import { ScrollArea } from "~/components/ui/scroll-area";
 
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
 } from "~/components/ui/sheet";
@@ -16,9 +16,9 @@ import { backgroundColor } from "~/root";
 import { hScreenFit } from "~/root";
 
 // ====================================================================================================
-
 export const menuWidth: string = "w-68";
-export const wScreenFit: string = "w-[calc(100vw-17rem)]"
+export const wScreenFit: string = "w-[calc(100vw-17rem)]";
+
 // ****************************************************************************************************
 export default function Portfolio()
 {
@@ -30,35 +30,48 @@ export default function Portfolio()
     }, []);
 
     return (
-        <div>
+        <div className={`${hScreenFit} ${wScreenFit} 
+                        flex items-center justify-center`
+        }>
             <Sheet modal={false} open={true}>
-            <SheetContent side={"right"} className={`${menuWidth} mt-12 ${isVisible ? 'animate-slideIn' : ''} ${backgroundColor} border-0`}>
-                <SheetHeader className="mb-8">
-                    <SheetTitle>Achievements & Projects</SheetTitle>
-                </SheetHeader>
+                <SheetContent side={"right"} className={`${menuWidth} mt-12 ${isVisible ? 'animate-slideIn' : ''} ${backgroundColor} border-0`}>
+                    <SheetHeader className="mb-8">
+                        <Link to="/portfolio">
+                            <SheetTitle>Achievements & Projects</SheetTitle>
+                        </Link>
+                    </SheetHeader>
 
-                {[
-                    {
-                        title: "About this Website",
-                        link: "website",
-                    },
-                    {
-                        title: "Achievements",
-                        link: "achievements",
-                    },
-                ].map((entry, index) => (
-                    <Link to={entry.link} key={index}>
-                        <div className="mb-5">
-                        {entry.title}
-                        </div>
-                    </Link>
-                ))}
-            </SheetContent>
+                    {[
+                        {
+                            title: "About this Website",
+                            link: "website",
+                        },
+                        {
+                            title: "Achievements",
+                            link: "achievements",
+                        },
+                    ].map((entry, index) => (
+                        <Link to={entry.link} key={index}>
+                            <div className="mb-5">
+                            {entry.title}
+                            </div>
+                        </Link>
+                    ))}
+                </SheetContent>
             </Sheet>
-
-            <div className={`${hScreenFit} ${wScreenFit} border-green-800 border rounded-lg`}>
+            {/* <div className={`min-h-[calc(100vh-4rem)] ${wScreenFit} ml-5
+                            border rounded-lg
+                            border-green-800 bg-black`}>
                 <Outlet/>
-            </div>
+            </div> */}
+
+            <ScrollArea 
+                className={`h-[calc(100vh-5rem)] w-[calc(100vw-19rem)]
+                            flex items-center justify-center
+                            border rounded-lg
+                            border-gray-600 bg-black`}>
+                <Outlet/>
+            </ScrollArea>
         </div>
     );
 }

@@ -55,5 +55,9 @@ export default function App() {
 }
 
 export function HydrateFallback() {
-  return <p>Loading...</p>;
+  return (
+    <div className={`text-4xl ${hScreenFit} w-full flex items-center justify-center`}>
+        Page loading...
+    </div>
+);
 }
