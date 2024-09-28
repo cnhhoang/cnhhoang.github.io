@@ -59,14 +59,9 @@ export default function Portfolio()
                     ))}
                 </SheetContent>
             </Sheet>
-            {/* <div className={`min-h-[calc(100vh-4rem)] ${wScreenFit} ml-5
-                            border rounded-lg
-                            border-green-800 bg-black`}>
-                <Outlet/>
-            </div> */}
 
             <ScrollArea 
-                className={`h-[calc(100vh-5rem)] w-[calc(100vw-19rem)]
+                className={`h-[calc(100vh-7rem)] w-[calc(100vw-20rem)]
                             flex items-center justify-center
                             border rounded-lg
                             border-gray-600 bg-black`}>
