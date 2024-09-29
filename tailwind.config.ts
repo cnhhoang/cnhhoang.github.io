@@ -16,8 +16,19 @@ const config: Config = {
           '"Noto Color Emoji"',
         ],
       },
+      fontWeight: {
+        thin: '100',
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+      },
       dropShadow: {
-        'remix-glow': '0 0 8px rgba(59, 130, 246, 0.8)', // Customize the size and color as needed
+        'remix-glow': '0 0 8px rgba(59, 130, 246, 0.8)', 
       },
       keyframes: {
         slideIn: {
@@ -47,5 +58,5 @@ const config: Config = {
   },
   plugins: [],
 };
-
-export default config;
+module.exports = config;
+// export default config;

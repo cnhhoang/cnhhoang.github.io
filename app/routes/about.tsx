@@ -1,7 +1,8 @@
 
-import Terminal from "~/lib/terminal";
 import { useEffect, useState } from "react";
-import { hScreenFit } from "~/root";
+
+import Terminal from "~/lib/terminal";
+import { hScreenFit, terminalSize } from "~/lib/utils";
 import FadeIn from "~/lib/fade-in";
 import Typewriter from "~/lib/typewriter";
 
@@ -30,13 +31,13 @@ export default function About()
 
   return (
     <div className={`${hScreenFit} w-full flex items-center justify-center`}>
-        <Terminal className={`${screen} h-full w-full transform transition-transform duration-1000 ease-in-out`}>
+        <Terminal className={`${screen} ${terminalSize} transform transition-transform duration-1000 ease-in-out`}>
             <div className={commandSettings}>
                 <Typewriter text="$ whoami" textSetting={textSetting}/>
             </div>
             
             {paragraphs.map((entry, index) => (
-                <FadeIn key={index} delay={effectTime*1.5/1000 + index*7} asChild>
+                <FadeIn key={index} delay={effectTime*1.5/1000} asChild>
                     <div className="text-lg mt-5">
                         {entry}
                     </div>

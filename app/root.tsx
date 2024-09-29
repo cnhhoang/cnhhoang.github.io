@@ -8,6 +8,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
 
@@ -24,9 +25,6 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
-
-export const hScreenFit: string = "h-[calc(100vh-3rem)] ";
-export const backgroundColor: string = "bg-gradient-to-b from-slate-900 to-blue-800";
 
 //****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {

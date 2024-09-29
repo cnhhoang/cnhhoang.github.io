@@ -37,7 +37,7 @@ const techStack = [
     },
     {
         tech: "shadcn/ui",
-        textSettings: "text-white font-extralight",
+        textSettings: "text-white font-thin italic",
         category: "UI Component Library",
         logo: <LogoSHADCN/>,
     },
@@ -47,35 +47,19 @@ const techStack = [
 export default function Website()
 {
     return (
-        <div className="h-full w-full flex flex-col p-10 space-y-3">
-            <div className="flex flex-cols text-green-500">
-                <Typewriter text="$ ps aux | grep technology" speed={40}/>
-            </div>
+        <div className="h-full w-full flex flex-col space-y-3">
+            <Typewriter text="$ man cnhhoang.github.io" textSetting="text-green-500"/>
 
-            <div className="flex flex-col items-center space-y-3">
-                {techStack.map((entry, index) => (
-                    <FadeIn key={index} delay={1+index/3} asChild>
-                        <div className="border rounded-lg border-zinc-800
-                                        w-1/2 p-3 bg-gray-950
-                                        flex items-center"
-                        >
-                            <div className="text-sm text-gray-500">
-                                {entry.category}
-                            </div>
-
-                            <div className="flex items-center ml-auto space-x-3">
-                                <div className={`text-xl ${entry.textSettings}`}>
-                                    {entry.tech}
-                                </div>
-                                <div className="h-10 w-10 flex items-center justify-center">
-                                    {entry.logo}
-                                </div>
-
-                            </div>
-                        </div>
-                    </FadeIn>
-                ))}
-            </div>
+            <FadeIn delay={1.25}>
+                <div className="space-y-5">
+                    <div>
+                        This website reflects my journey as a software engineer and penetration tester, serving as an interactive resume and highlighting my achievements, skills, and the technologies I’ve mastered.
+                    </div>
+                    <div>
+                        Whether you’re a potential collaborator, recruiter, or fellow enthusiast, please feel free to reach out via email - I would be happy to connect.
+                    </div>
+                </div>
+            </FadeIn>
         </div>
     );
 }
