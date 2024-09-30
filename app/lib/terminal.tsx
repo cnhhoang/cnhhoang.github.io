@@ -4,8 +4,8 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 
 // ====================================================================================================
 interface TerminalProps {
-    children: React.ReactNode; // To render any content inside <Terminal> ... </Terminal>
-    className?: string;        // Accepts custom class names
+    children: React.ReactNode;
+    className?: string;       
 }
     
 // ****************************************************************************************************
@@ -21,8 +21,11 @@ const Terminal: React.FC<TerminalProps> = ({ children, className = "" }) => {
         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
       </div>
+      
       {/* Terminal content */}
-      <div className="overflow-auto z-0 mt-10 text-slate-400">{children}</div>
+      <div className="overflow-auto z-0 mt-10 text-slate-400">
+        {children}
+      </div>
     </ScrollArea>
   );
 };

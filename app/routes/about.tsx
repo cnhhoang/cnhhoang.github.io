@@ -14,11 +14,12 @@ const paragraphs = [
 ];
 
 const effectTime = 1500;
+
 // ****************************************************************************************************
 export default function About()
 {
   const [screen, setscreen] = useState("scale-50 skew-x-6 -skew-y-1");
-  const [commandSettings, setCommandSettings] = useState("h-96 w-full flex items-center justify-center");
+  const [commandSettings, setCommandSettings] = useState("h-72 w-full flex items-center justify-center");
   const [textSetting, setTextSetting] = useState("text-green-500 text-8xl");
   useEffect(() => {
     const timer = setTimeout(() => {
