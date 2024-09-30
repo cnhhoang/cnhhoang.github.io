@@ -44,7 +44,7 @@ const techStack = [
 ];
 
 //****************************************************************************************************
-export default function Website()
+export default function TechStack()
 {
     return (
         <div className="h-full w-full flex flex-col space-y-3">
