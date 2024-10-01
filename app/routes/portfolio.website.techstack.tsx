@@ -1,5 +1,5 @@
 import LogoNodeJS from "~/assets/images/logo-nodejs.png";
-import { LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript } from "~/assets/logos";
+import { LogoGithub, LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript } from "~/assets/logos";
 import FadeIn from "~/lib/fade-in";
 import Typewriter from "~/lib/typewriter";
 
@@ -41,6 +41,12 @@ const techStack = [
         category: "UI Component Library",
         logo: <LogoSHADCN/>,
     },
+    {
+        tech: "Github",
+        textSettings: "text-zinc-700",
+        category: "Deployment Platform",
+        logo: <LogoGithub/>,
+    }
 ];
 
 //****************************************************************************************************

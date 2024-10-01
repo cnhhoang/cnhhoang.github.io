@@ -28,8 +28,7 @@ export default function PortfolioSideMenu()
     return (
         <Sheet modal={false} open={true}>
             <SheetContent side={"right"} className={`${menuWidth} mt-12 ${isVisible ? 'animate-slideIn' : ''} ${backgroundColor} border-0`}>
-                {[
-                    {
+                {[  {
                         title: "This Website",
                         link: "website",
                         children: [
@@ -47,12 +46,16 @@ export default function PortfolioSideMenu()
                         title: "Achievements",
                         link: "achievements",
                     },
+                    {
+                        title: "Web App Pentesting",
+                        link: "pentest-web"
+                    }
                 ].map((entry, index) => (
                     <div key={index} className=" mt-5">
                         <NavLink 
                             to={entry.link} 
                             className={({ isActive, isPending }) =>
-                                `mx-3 pr-1.5 py-1.5 relative transition-all duration-300 transform 
+                                `text-lg mx-3 pr-1.5 py-1.5 relative transition-all duration-300 transform 
                                  hover:text-sky-400 active:text-sky-600
                                  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
                                  ${isActive || isPending ? 'text-sky-500 after:scale-x-100' : 'text-white after:scale-x-0'}`
