@@ -71,10 +71,10 @@ export default function NavBar()
                 key={index}
                 to={route.link} 
                 className={({ isActive, isPending  }) =>
-                  `mx-3 px-3 pb-1 relative transition-all duration-300 transform 
+                  `mx-3 px-3 pb-1 relative transition-all transform ease-in-out  duration-300
                   border-2 border-transparent rounded-full
                   after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                  hover:text-green-400 active:text-green-600
+                  hover:scale-110 hover:text-green-400  active:text-green-600
                   ${isActive || isPending? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
                 `}>
                 {route.display}

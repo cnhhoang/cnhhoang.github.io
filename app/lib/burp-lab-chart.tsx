@@ -45,7 +45,7 @@ export function LabPieChart({solve, total, title, color}: ChartProps) {
       color: "hsl(var(--muted))",
     },
   } ;
-  
+
   let description = "A donut chart with text";
 
   // **************************
@@ -130,7 +130,7 @@ interface LabBarChartProps {
 // ****************************************************************************************************
 export function LabBarChart({ solved, total }: LabBarChartProps) {
   const percentage = Math.round((solved / total) * 100);
-  const animationDuration = 600;
+  const animationDuration = 700;
   const [animatedWidth, setAnimatedWidth] = useState(0);
 
   useEffect(() => {
@@ -143,7 +143,7 @@ export function LabBarChart({ solved, total }: LabBarChartProps) {
 
   return (
     <div className="relative h-4 w-full bg-black rounded-full overflow-hidden">
-      <div  className="bg-yellow-500 h-full transition-all duration-1000 ease-in-out"
+      <div  className="bg-yellow-400 h-full transition-all duration-1000 ease-out"
             style={{ width: `${animatedWidth}%` }}
       />
 
