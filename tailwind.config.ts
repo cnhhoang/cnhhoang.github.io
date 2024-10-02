@@ -4,6 +4,11 @@ const config: Config = {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        blue: {
+          550: '#3a8dd9',
+        },
+      },
       fontFamily: {
         sans: [
           '"Inter"',

@@ -1,5 +1,5 @@
 import LogoNodeJS from "~/assets/images/logo-nodejs.png";
-import { LogoGithub, LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript } from "~/assets/logos";
+import { LogoGithub, LogoGithubAction, LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript } from "~/assets/logos";
 import FadeIn from "~/lib/fade-in";
 import Typewriter from "~/lib/typewriter";
 
@@ -37,21 +37,22 @@ const techStack = [
     },
     {
         tech: "shadcn/ui",
-        textSettings: "text-white font-thin italic",
+        textSettings: "font-sans text-gray-300 font-light italic",
         category: "UI Component Library",
         logo: <LogoSHADCN/>,
     },
     {
         tech: "Github",
-        textSettings: "text-zinc-700",
+        textSettings: "text-gray-600 opacity-80",
         category: "Deployment Platform",
         logo: <LogoGithub/>,
     },
     {
-        tech: "Github Action",
-        textSettings: "text-zinc-700",
+        // tech: "Github Action",
+        tech: <span>Github Acti<span className="font-mono text-2xl text-blue-300">o</span>n</span>,
+        textSettings: "font-sans text-blue-550",
         category: "CI/CD Tool",
-        logo: <LogoGithub/>,
+        logo: <LogoGithubAction/>,
     },
 ];
 

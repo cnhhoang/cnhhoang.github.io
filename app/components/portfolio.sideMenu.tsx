@@ -65,10 +65,12 @@ export default function PortfolioSideMenu()
                         <NavLink 
                             to={entry.link} 
                             className={({ isActive, isPending }) =>
-                                `text-lg mx-3 pr-1.5 py-1.5 relative transition-all duration-300 transform 
-                                 hover:text-sky-300 hover:font-bold active:text-sky-600
-                                 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                                 ${isActive || isPending ? 'font-bold text-sky-500 after:scale-x-100' : 'text-white after:scale-x-0'}`
+                                `text-lg mx-3 pr-1.5 py-1.5 relative transition-all transform duration-300 
+                                hover:text-sky-300 hover:font-bold active:text-sky-600
+                                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
+                                ${isActive || isPending 
+                                ? 'font-bold text-sky-500 after:scale-x-100 hover:text-sky-400' 
+                                : 'text-white after:scale-x-0'}`
                             }              
                             onClick={() => {
                                 setActiveTab(entry.title);
