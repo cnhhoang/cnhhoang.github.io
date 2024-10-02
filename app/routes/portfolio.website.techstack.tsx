@@ -37,7 +37,7 @@ const techStack = [
     },
     {
         tech: "shadcn/ui",
-        textSettings: "font-sans text-gray-300 font-light italic",
+        textSettings: "font-sans text-gray-400 font-light italic",
         category: "UI Component Library",
         logo: <LogoSHADCN/>,
     },
