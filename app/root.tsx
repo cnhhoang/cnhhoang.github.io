@@ -11,6 +11,7 @@ import "./tailwind.css";
 import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
+import Typewriter from "./lib/typewriter";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -54,8 +55,9 @@ export default function App() {
 
 export function HydrateFallback() {
   return (
-    <div className={`text-4xl ${hScreenFit} w-full flex items-center justify-center`}>
-        Page loading...
+    <div className={`text-4xl text-gray-500 ${hScreenFit} w-full flex items-center justify-center`}>
+      Page loading
+      <Typewriter text="..." speed={200}/>
     </div>
-);
+  );
 }
