@@ -48,7 +48,17 @@ export default function PortfolioSideMenu()
                     },
                     {
                         title: "Web App Pentesting",
-                        link: "pentest-web"
+                        link: "pentest-web",
+                        children: [
+                            {
+                                title: "Dashboard",
+                                link: "/portfolio/pentest-web"
+                            },
+                            {
+                                title: "Security topics",
+                                link: "/portfolio/pentest-web/topics"
+                            },                       
+                        ]
                     }
                 ].map((entry, index) => (
                     <div key={index} className=" mt-5">
@@ -56,9 +66,9 @@ export default function PortfolioSideMenu()
                             to={entry.link} 
                             className={({ isActive, isPending }) =>
                                 `text-lg mx-3 pr-1.5 py-1.5 relative transition-all duration-300 transform 
-                                 hover:text-sky-400 active:text-sky-600
+                                 hover:text-sky-300 hover:font-bold active:text-sky-600
                                  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                                 ${isActive || isPending ? 'text-sky-500 after:scale-x-100' : 'text-white after:scale-x-0'}`
+                                 ${isActive || isPending ? 'font-bold text-sky-500 after:scale-x-100' : 'text-white after:scale-x-0'}`
                             }              
                             onClick={() => {
                                 setActiveTab(entry.title);

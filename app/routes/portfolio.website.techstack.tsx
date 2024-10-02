@@ -46,7 +46,13 @@ const techStack = [
         textSettings: "text-zinc-700",
         category: "Deployment Platform",
         logo: <LogoGithub/>,
-    }
+    },
+    {
+        tech: "Github Action",
+        textSettings: "text-zinc-700",
+        category: "CI/CD Tool",
+        logo: <LogoGithub/>,
+    },
 ];
 
 //****************************************************************************************************

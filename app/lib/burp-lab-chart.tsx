@@ -15,6 +15,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "~/components/ui/chart"
+import IncrementingNumber from "./incrementing-number";
 
 
 // ====================================================================================================
@@ -29,7 +30,7 @@ interface ChartProps {
 export function LabPieChart({solve, total, title, color}: ChartProps) {
   const chartData = [
     { entry: "solved", value: solve, fill: "var(--color-solved)" },
-    { entry: "remain", value: total-solve, fill: "var(--color-remain)" },
+    { entry: "unsolved", value: total-solve, fill: "var(--color-unsolved)" },
   ]
   
   const chartConfig = {
@@ -40,8 +41,8 @@ export function LabPieChart({solve, total, title, color}: ChartProps) {
       label: "Solved",
       color: color,
     },
-    remain: {
-      label: "Remain",
+    unsolved: {
+      label: "Unsolved",
       color: "hsl(var(--muted))",
     },
   } ;
@@ -87,7 +88,7 @@ export function LabPieChart({solve, total, title, color}: ChartProps) {
                             x={viewBox.cx}
                             y={(viewBox.cy || 0) - 12}
                             className="text-3xl font-bold"
-                            fill="white"
+                            fill={color}
                         >
                             {solve}
                         </tspan>
@@ -148,7 +149,7 @@ export function LabBarChart({ solved, total }: LabBarChartProps) {
       />
 
       <div className="absolute inset-0 flex items-center justify-center text-zinc-500 text-sm font-bold ">
-        {percentage}%
+        <IncrementingNumber number={percentage} delay={1500}/>%
       </div>
     </div>
   );
