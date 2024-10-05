@@ -19,13 +19,11 @@ const effectTime = 1500;
 // ****************************************************************************************************
 export default function About()
 {
-  const [screen, setscreen] = useState("scale-50 skew-x-6 -skew-y-1");
-  const [commandSettings, setCommandSettings] = useState("translate-x-44 translate-y-24");
+  const [screenSettings, setscreenSettings] = useState("scale-50 skew-x-6 -skew-y-1");
   const [textSetting, setTextSetting] = useState("text-green-500 text-[90px]");
   useEffect(() => {
     const timer = setTimeout(() => {
-        setscreen("h-full w-full");
-        setCommandSettings("");
+        setscreenSettings("h-full w-full");
         setTextSetting("text-green-500 text-[24px]");
     }, effectTime);
     return () => clearTimeout(timer);
@@ -33,8 +31,8 @@ export default function About()
 
   return (
     <div className={`${hScreenFit} w-full flex items-center justify-center`}>
-        <Terminal className={`${screen} ${terminalSize} transform transition-transform duration-1000 ease-in-out`}>
-            <div className={`transform transition-all duration-1000 ${commandSettings}`}>
+        <Terminal className={`${screenSettings} ${terminalSize} transform transition-transform duration-1000 ease-in-out`}>
+            <div className={`transform transition-all duration-1000`}>
                 <Typewriter text="$ whoami" textSetting={`${textSetting} transition-all duration-1000`}/>
             </div>
             
