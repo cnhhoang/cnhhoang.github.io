@@ -70,13 +70,14 @@ export default function NavBar()
             <NavLink  
                 key={index}
                 to={route.link} 
-                className={({ isActive, isPending  }) =>
-                  `mx-3 px-3 pb-1 relative transition-all transform ease-in-out  duration-300
-                  border-2 border-transparent rounded-full
-                  after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                  hover:scale-110 hover:text-green-400  active:text-green-600
-                  ${isActive || isPending? 'text-green-500 border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
-                `}>
+                className={({ isActive, isPending }) =>
+                  `text-lg mx-5 py-1.5 px-1 relative transition-all transform duration-300 
+                  hover:scale-110 hover:text-sky-300 active:text-sky-600
+                  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:transition-transform after:duration-500 
+                  ${isActive || isPending 
+                  ? 'font-bold text-sky-500 after:scale-x-100 hover:text-sky-400' 
+                  : 'text-white after:scale-x-0'}`
+                }>
                 {route.display}
             </NavLink>
           ))}

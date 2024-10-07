@@ -64,14 +64,13 @@ export default function PortfolioSideMenu()
                     <div key={index} className=" mt-5">
                         <NavLink 
                             to={entry.link} 
-                            className={({ isActive, isPending }) =>
-                                `text-lg mx-3 pr-1.5 py-1.5 relative transition-all transform duration-300 
-                                hover:text-sky-300 hover:font-bold active:text-sky-600
-                                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
-                                ${isActive || isPending 
-                                ? 'font-bold text-sky-500 after:scale-x-100 hover:text-sky-400' 
-                                : 'text-white after:scale-x-0'}`
-                            }              
+                            className={({ isActive, isPending  }) =>
+                                `px-2.5 py-1.5 relative transition-all transform ease-in-out duration-500
+                                border-2 border-transparent rounded-full
+                                after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
+                                hover:text-green-300 hover:font-bold  active:text-green-600 active:font-bold
+                                ${isActive || isPending? 'text-green-500 font-bold border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
+                            `}          
                             onClick={() => {
                                 setActiveTab(entry.title);
                                 if (entry.children)
@@ -89,8 +88,8 @@ export default function PortfolioSideMenu()
                                     to={child.link}
                                     className={({ isActive }) =>
                                     `block px-2 py-1 transition-colors duration-300
-                                    hover:text-cyan-300 active:text-cyan-400
-                                    ${activeChild===child.title ? "text-cyan-300" : "text-gray-300"}
+                                    hover:text-emerald-400 active:text-emerald-500
+                                    ${activeChild===child.title ? "text-emerald-400" : "text-gray-300"}
                                     `}
                                     onClick={() => setActiveChild(child.title)}
                                 >
