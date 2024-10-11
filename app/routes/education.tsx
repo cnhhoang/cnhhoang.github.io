@@ -8,7 +8,9 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "~/components/ui/accordion";
+import FadeIn from "~/lib/fade-in";
 import FlippingLogo from "~/lib/flipping-logo";
+import Typewriter from "~/lib/typewriter";
 
 // ====================================================================================================
 const history = [
@@ -19,8 +21,11 @@ const history = [
                 <LogoMonash/>
             </div>),
         organization: "Monash University",
-        title: "Master of Cybersecurity",
-        duration: "July 2022 - July 2024",
+        title: 
+            <div className="rounded-full px-2 bg-white text-black font-bold">
+                Master of Cybersecurity
+            </div>,
+        duration: "July 2024",
         description: [
             "Master degree awarded with distinction (WAM above 80).",
             "Thesis accepted and presented as a full paper at ProvSec2024 (acceptance rate 33%).",
@@ -37,8 +42,11 @@ const history = [
             </div>
         ),
         organization: "Ho Chi Minh University of Science",
-        title: "Bachelor of Computer Science",
-        duration: "2016 - 2020",
+        title:             
+            <div className="rounded-full px-2 bg-blue-900 text-white font-bold">
+                Bachelor of Computer Science
+            </div>,
+        duration: "2020",
         description: [
             "First-class honours awarded (WAM above 80).",
             "Research paper awarded with Best paper award in SoICT2019.",
@@ -59,8 +67,10 @@ const history = [
             </div>
         ),
         organization: "VNU-HCM High School for the Gifted",
-        title: "Majoring in Information Technology",
-        duration: "2013 - 2016",
+        title:  <div className="rounded-full px-2 bg-sky-200 text-blue-800 font-bold">
+                    Majoring in Information Technology
+                </div>,
+        duration: "2016",
         description: [
             "Valedictorian of Ho Chi Minh City's Olympiad in Informatics, 2016.",
             "Vietnam National Olympiad in Informatics, 2016.",
@@ -76,42 +86,45 @@ export default function Education()
 {
     return (
         <div className="relative w-full p-5 text-white">
-            <div className="flex jusity-center items-center 
+            {/* <div className="flex jusity-center items-center 
                             text-4xl text-white">
                 Education
-            </div>
+            </div> */}
+            <Typewriter text="$history | grep education" textSetting="text-xl text-green-500"/>
 
-            <Accordion type="multiple" className="mt-10 w-full none-select">
-                {history.map((entry) => (
-                    <AccordionItem value={entry.organization}>
-                        <AccordionTrigger className="none-select">
-                            <div className="flex none-select">
-                                {entry.logo()}
-                                <FlippingLogo id={entry.id} flipCount={4}/>
-                                <div className="flex flex-col items-start none-select">
-                                    <div className="text-2xl">
-                                        {entry.organization}
-                                    </div>
-                                    <div className="">
-                                        {entry.title}
+            <FadeIn delay={1.5}>
+                <Accordion type="multiple" className="w-full none-select">
+                    {history.map((entry) => (
+                        <AccordionItem value={entry.id}>
+                            <AccordionTrigger className="none-select">
+                                <div className="flex none-select">
+                                    {entry.logo()}
+                                    <FlippingLogo id={entry.id} flipCount={4}/>
+                                    <div className="flex flex-col items-start none-select">
+                                        <div className={`text-l`}>
+                                            {entry.organization}
+                                        </div>
+                                        <div className="text-2xl">
+                                            {entry.title}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="ml-auto mr-5">
-                                {entry.duration}
-                            </div>
-                        </AccordionTrigger>
+                                <div className="text-xl text-emerald-500 ml-auto mr-5">
+                                    {entry.duration}
+                                </div>
+                            </AccordionTrigger>
 
-                        <AccordionContent>
-                            {entry.description.map((content, index) => (
-                                <li key={index}>
-                                    {content}
-                                </li>
-                            ))}
-                        </AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
+                            <AccordionContent>
+                                {entry.description.map((content, index) => (
+                                    <li key={index}>
+                                        {content}
+                                    </li>
+                                ))}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            </FadeIn>
         </div>            
     );
 }
