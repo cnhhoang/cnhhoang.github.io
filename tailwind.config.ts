@@ -36,13 +36,41 @@ const config: Config = {
         'remix-glow': '0 0 8px rgba(59, 130, 246, 0.8)', 
       },
       keyframes: {
-        slideIn: {
-          '0%': { transform: 'translateX(100%)', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
+        bounce: {
+          '0%, 100%': {
+            transform: 'translateY(-25%)',
+            'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)',
+          },
+          '50%': {
+            transform: 'translateY(0)',
+            'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
+          },
         },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        ping: {
+          '75%, 100%': {
+            transform: 'scale(2)',
+            opacity: '0',
+          }
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: ".5" },
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        "spin": {
+            from: { transform: 'rotate(0deg)',},
+            to: { transform: 'rotate(360deg)',},
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
         },
         "accordion-down": {
           from: { height: "0" },
@@ -54,8 +82,13 @@ const config: Config = {
         },
       },
       animation: {
-        slideIn: 'slideIn 0.5s ease-out forwards',
+        bounce: 'bounce 1s infinite',
         fadeIn: 'fadeIn 1s ease-in forwards',
+        slideIn: 'slideIn 0.5s ease-out forwards',
+        spin: 'spin 1s linear infinite',
+        ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        wiggle: 'wiggle 1s ease-in-out infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
