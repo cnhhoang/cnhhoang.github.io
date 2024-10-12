@@ -22,7 +22,7 @@ const history = [
             </div>),
         organization: "Monash University",
         title: 
-            <div className="rounded-full px-2 bg-white text-black font-bold">
+            <div className="rounded-md px-2 bg-white text-black font-bold">
                 Master of Cybersecurity
             </div>,
         duration: "July 2024",
@@ -43,7 +43,7 @@ const history = [
         ),
         organization: "Ho Chi Minh University of Science",
         title:             
-            <div className="rounded-full px-2 bg-blue-900 text-white font-bold">
+            <div className="rounded-md px-2 bg-blue-900 text-white font-bold">
                 Bachelor of Computer Science
             </div>,
         duration: "2020",
@@ -67,7 +67,7 @@ const history = [
             </div>
         ),
         organization: "VNU-HCM High School for the Gifted",
-        title:  <div className="rounded-full px-2 bg-sky-200 text-blue-800 font-bold">
+        title:  <div className="rounded-md px-2 bg-sky-200 text-blue-800 font-bold">
                     Majoring in Information Technology
                 </div>,
         duration: "2016",
@@ -86,10 +86,6 @@ export default function Education()
 {
     return (
         <div className="relative w-full p-5 text-white">
-            {/* <div className="flex jusity-center items-center 
-                            text-4xl text-white">
-                Education
-            </div> */}
             <Typewriter text="$history | grep education" textSetting="text-xl text-green-500"/>
 
             <FadeIn delay={1.5}>
@@ -109,7 +105,7 @@ export default function Education()
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-xl text-emerald-500 ml-auto mr-5">
+                                <div className="text-xl text-emerald-400 ml-auto mr-5">
                                     {entry.duration}
                                 </div>
                             </AccordionTrigger>
