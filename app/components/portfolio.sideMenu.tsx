@@ -1,4 +1,4 @@
-import { NavLink } from "@remix-run/react";
+import { NavLink, useLocation } from "@remix-run/react";
 import { 
     useEffect, 
     useState,
@@ -80,9 +80,12 @@ export default function PortfolioSideMenu()
     const [isVisible, setIsVisible] = useState(false);
     const [activeTab, setActiveTab] = useState("");
     const [activeChild, setActiveChild] = useState("");
+    const location = useLocation();
     useEffect(() => {
+        if (location.pathname === "/portfolio")
+            setActiveTab("");
         setIsVisible(true);
-      }, []);
+      }, [location]);
 
     return (
         <Sheet modal={false} open={true}>
