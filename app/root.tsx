@@ -11,7 +11,6 @@ import "./tailwind.css";
 import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
-import Typewriter from "./lib/typewriter";
 import { LoaderCircle } from "lucide-react";
 
 // ====================================================================================================

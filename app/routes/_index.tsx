@@ -6,19 +6,19 @@ import Typewriter from '~/lib/typewriter';
 const careers = [
   {
     text: "programmer",
-    setting: "text-4xl text-green-600"
+    setting: "text-4xl text-emerald-500"
   },
   {
     text: "software developer",
-    setting: "text-4xl text-sky-600"
+    setting: "text-4xl text-sky-500"
   },
   {
     text: "penetration tester",
-    setting: "text-4xl text-red-600"
+    setting: "text-4xl text-red-500"
   },
   {
     text: "researcher",
-    setting: "text-4xl text-purple-500"
+    setting: "text-4xl text-violet-500"
   },
 ];
 
