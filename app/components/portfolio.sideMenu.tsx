@@ -4,16 +4,75 @@ import {
     useState,
 } from "react";
 
-import { backgroundColor } from "~/lib/utils";
-
 import {
     Sheet,
     SheetContent,
 } from "~/components/ui/sheet";
+import StatusIndicator from "~/lib/status-indicator";
 
 // ====================================================================================================
 export const menuWidth: string = "w-72";
 export const wScreenFit: string = "w-[calc(100vw-17rem)]";
+const backgroundSetting: string = " bg-gradient-to-b from-slate-900 via-sky-900 to-blue-950 border-zinc-700 border-2 rounded-lg border-emerald-950 ";
+
+const portfolioMenuItems = [  
+    {
+        title: "Profile",
+        link: "profile",
+        children: [
+            {
+                title: "Achievements",
+                link: "/portfolio/profile/achievements",
+                                                 },
+            {
+                title: "Skills",
+                link: "/portfolio/profile/skills",
+            },
+        ],
+        status: "not-started",
+    },
+    {
+        title: "This Website",
+        link: "website",
+        children: [
+            {
+                title: "About",
+                link: "/portfolio/website",
+            },
+            {
+                title: "Tech stack",
+                link: "/portfolio/website/techstack",
+            },
+        ],
+        status: "pending",
+    },
+    {
+        title: "Algorithms Library",
+        link: "cp-lib",
+        children: [
+            {
+                title: "C++",
+                link: "/portfolio/cp-lib/cpp",
+            },
+        ],
+        status: "completed",
+    },
+    {
+        title: "Web App Pentesting",
+        link: "pentest-web",
+        children: [
+            {
+                title: "Dashboard",
+                link: "/portfolio/pentest-web",
+            },
+            {
+                title: "Security topics",
+                link: "/portfolio/pentest-web/topics",
+            },                       
+        ],
+        status: "active",
+    }
+];
 
 // ****************************************************************************************************
 export default function PortfolioSideMenu()
@@ -27,40 +86,8 @@ export default function PortfolioSideMenu()
 
     return (
         <Sheet modal={false} open={true}>
-            <SheetContent side={"right"} className={`${menuWidth} mt-12 ${isVisible ? 'animate-slideIn' : ''} ${backgroundColor} border-0`}>
-                {[  {
-                        title: "This Website",
-                        link: "website",
-                        children: [
-                            {
-                                title: "About",
-                                link: "/portfolio/website"
-                            },
-                            {
-                                title: "Tech stack",
-                                link: "/portfolio/website/techstack"
-                            },
-                        ]
-                    },
-                    {
-                        title: "Achievements",
-                        link: "achievements",
-                    },
-                    {
-                        title: "Web App Pentesting",
-                        link: "pentest-web",
-                        children: [
-                            {
-                                title: "Dashboard",
-                                link: "/portfolio/pentest-web"
-                            },
-                            {
-                                title: "Security topics",
-                                link: "/portfolio/pentest-web/topics"
-                            },                       
-                        ]
-                    }
-                ].map((entry, index) => (
+            <SheetContent side={"right"} className={`${menuWidth} mt-12 ${isVisible ? 'animate-slideIn' : ''} ${backgroundSetting}`}>
+                { portfolioMenuItems.map((entry, index) => (
                     <div key={index} className=" mt-5">
                         <NavLink 
                             to={entry.link} 
@@ -78,6 +105,11 @@ export default function PortfolioSideMenu()
                             }}
                         >                    
                             {entry.title}
+                            {entry.status && 
+                                <span className="absolute top-1/2 -translate-y-1/2 left-1 -translate-x-6">
+                                    <StatusIndicator status={entry.status} size={"3"}/>
+                                </span>
+                            }
                         </NavLink>
 
                         {activeTab===entry.title && entry.children && (
