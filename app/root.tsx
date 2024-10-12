@@ -58,8 +58,9 @@ export default function App() {
 export function HydrateFallback() {
   return (
     <div className={`text-6xl text-emerald-500 ${hScreenFit} w-full flex items-center justify-center`}>
-      Page loading...
-      <LoaderCircle className="h-10 w-10 ml-4 animate-spin"/>
+      <span>Page l</span>
+      <LoaderCircle className="h-10 w-10 relative top-[0.3rem] animate-spin" />
+      <span>ading...</span>
     </div>
   );
 }
