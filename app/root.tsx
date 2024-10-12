@@ -12,6 +12,7 @@ import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
 import Typewriter from "./lib/typewriter";
+import { LoaderCircle } from "lucide-react";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -49,15 +50,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+// **************************
 export default function App() {
   return <Outlet />;
 }
 
+// **************************
 export function HydrateFallback() {
   return (
-    <div className={`text-4xl text-gray-500 ${hScreenFit} w-full flex items-center justify-center`}>
-      Page loading
-      <Typewriter text="..." speed={200}/>
+    <div className={`text-6xl text-emerald-500 ${hScreenFit} w-full flex items-center justify-center`}>
+      Page loading...
+      <LoaderCircle className="h-10 w-10 ml-4 animate-spin"/>
     </div>
   );
 }
