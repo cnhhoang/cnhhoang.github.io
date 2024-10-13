@@ -112,7 +112,7 @@ export default function Education()
 
                             <AccordionContent>
                                 {entry.description.map((content, index) => (
-                                    <li key={index}>
+                                    <li key={index} className="text-gray-300">
                                         {content}
                                     </li>
                                 ))}
