@@ -7,10 +7,9 @@ interface StatusIndicatorProps {
 // ****************************************************************************************************
 export default function StatusIndicator({ status, size="4"}: StatusIndicatorProps) 
 {
-  let effect: string = " bg-gray-400 ";
-
+  let effect: string = "";
   if (status === "pending")
-    effect = " animate-pulse bg-amber-500 ";
+    effect = " bg-gray-400 ";
   if (status === "active")
     effect = " animate-pulse bg-green-500 ";
   if (status === "completed")

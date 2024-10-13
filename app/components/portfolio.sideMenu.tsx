@@ -13,7 +13,7 @@ import StatusIndicator from "~/lib/status-indicator";
 // ====================================================================================================
 export const menuWidth: string = "w-72";
 export const wScreenFit: string = "w-[calc(100vw-17rem)]";
-const backgroundSetting: string = " bg-gradient-to-b from-slate-900 via-sky-900 to-blue-950 border-zinc-700 border-2 rounded-lg border-emerald-950 ";
+const backgroundSetting: string = " bg-gradient-to-b from-slate-900 via-sky-900 to-blue-950 border-zinc-700 border-2 rounded-lg border-emerald-800 ";
 
 const portfolioMenuItems = [  
     {
@@ -29,7 +29,6 @@ const portfolioMenuItems = [
                 link: "/portfolio/profile/skills",
             },
         ],
-        status: "not-started",
     },
     {
         title: "This Website",
@@ -44,7 +43,7 @@ const portfolioMenuItems = [
                 link: "/portfolio/website/techstack",
             },
         ],
-        status: "pending",
+        status: "active",
     },
     {
         title: "Algorithms Library",
@@ -55,7 +54,7 @@ const portfolioMenuItems = [
                 link: "/portfolio/cp-lib/cpp",
             },
         ],
-        status: "completed",
+        status: "pending",
     },
     {
         title: "Web App Pentesting",
