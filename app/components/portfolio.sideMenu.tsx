@@ -8,6 +8,7 @@ import {
     Sheet,
     SheetContent,
 } from "~/components/ui/sheet";
+import { hScreenFit } from "~/lib/utils";
 import StatusIndicator from "~/lib/status-indicator";
 
 // ====================================================================================================
@@ -54,7 +55,7 @@ const portfolioMenuItems = [
                 link: "/portfolio/cp-lib/cpp",
             },
         ],
-        status: "pending",
+        status: "queued",
     },
     {
         title: "Web App Pentesting",
@@ -88,7 +89,12 @@ export default function PortfolioSideMenu()
 
     return (
         <Sheet modal={false} open={true}>
-            <SheetContent side={"right"} className={`${menuWidth} mt-12 ${isVisible ? 'animate-slideIn' : ''} ${backgroundSetting}`}>
+            <SheetContent 
+                side={"right"} 
+                className={`${hScreenFit} ${menuWidth} mt-12 ${backgroundSetting}
+                            ${isVisible ? 'animate-slideIn' : ''}`
+                }
+            >
                 { portfolioMenuItems.map((entry, index) => (
                     <div key={index} className=" mt-5">
                         <NavLink 
@@ -134,6 +140,28 @@ export default function PortfolioSideMenu()
                         )}
                     </div>
                 ))}
+
+                {/* Status legend */}
+                <div className="absolute bottom-3 right-3 text-sm text-gray-300">
+                    <div className="flex">
+                        <div className="flex items-center mr-1">
+                            <StatusIndicator status="active" size="3"/>
+                        </div>
+                        : In Progress
+                    </div>
+                    <div className="flex">
+                        <div className="flex items-center mr-1">
+                            <StatusIndicator status="queued" size="3"/>
+                        </div>
+                        : To Be Updated
+                    </div>
+                    <div className="flex">
+                        <div className="flex items-center mr-1">
+                            <StatusIndicator status="pending" size="3"/>
+                        </div>
+                        : Pending
+                    </div>
+                </div>
             </SheetContent>
         </Sheet>        
     );

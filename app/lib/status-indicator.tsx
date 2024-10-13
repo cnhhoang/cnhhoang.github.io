@@ -10,6 +10,8 @@ export default function StatusIndicator({ status, size="4"}: StatusIndicatorProp
   let effect: string = "";
   if (status === "pending")
     effect = " bg-gray-400 ";
+  if (status === "queued")
+    effect = " animate-pulse bg-amber-400 ";
   if (status === "active")
     effect = " animate-pulse bg-green-500 ";
   if (status === "completed")
