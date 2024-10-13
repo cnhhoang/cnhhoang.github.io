@@ -5,8 +5,8 @@ import Typewriter from "~/lib/typewriter";
 const achievements = [
     "Monash University, Master of Cybersecurity degree awarded with distinction.",
     "Master's Thesis accepted and presented as a full paper at ProvSec2024.",
+    "Commendation letters for excellent academic performance, 2023.",
     "Runner-up in MCPC 2022, Monash's largest Competitive Programming Contest.",
-    "Commendation letter for excellent academic performance.",
     "HCMUS, Bachelor of Computer Science, graduated with First-class honours.",
     "Research paper awarded with Best paper award in SoICT2019.",
     "Research paper accepted and presented as a full paper at FDSE2019.",
@@ -20,7 +20,7 @@ const achievements = [
     "Vietnam National Olympiad in Informatics, 2016.",
     "Gold medal in the April 30th Olympiad in Informatics, 2015.",
     "Gold medal in the April 30th Olympiad in Informatics, 2014.",
-    "Scholarships for excellent academic performance from HSG.",
+    "Scholarships for excellent academic performance.",
 
 ];
 //****************************************************************************************************
@@ -29,16 +29,14 @@ export default function Achievements()
     return (
         <div className="h-full w-full flex flex-col space-y-3">
             <Typewriter text="$ ls achievements/" textSetting="text-green-500"/>
-
-            <FadeIn delay={1}>
-                {
-                    achievements.map((entry, index) => (
-                        <li key={index} className="text-lg">
-                            {entry}
-                        </li>
+                {   achievements.map((entry, index) => (
+                        <FadeIn delay={1+index*0.3}>
+                            <li key={index} className="text-lg">
+                                {entry}
+                            </li>
+                        </FadeIn>
                     ))
                 }
-            </FadeIn>
         </div>
     );
 }
