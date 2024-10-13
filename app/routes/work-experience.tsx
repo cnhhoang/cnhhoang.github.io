@@ -9,6 +9,8 @@ import {
     CarouselNext,
     CarouselPrevious,
   } from "~/components/ui/carousel"
+import FadeIn from "~/lib/fade-in";
+import Typewriter from "~/lib/typewriter";
 
 // ====================================================================================================
 const history = [
@@ -47,34 +49,40 @@ const history = [
 export default function WorkExperience()
 {   
     return (
-        <div className="h-full w-full flex items-center justify-center">
-            <Carousel className="w-full max-w-lg h-full flex justify-center">
-                <CarouselContent className="h-full w-full">
-                    { history.map((entry, index) => (
-                        <CarouselItem className="p-5 w-full h-full flex flex-col" key={index}>
-                            <div className="w-full flex justify-center">
-                                {entry.logo()}
-                            </div>
+        <div className="relative w-full p-5 text-white">
+            <Typewriter text="$history | grep experience" textSetting="text-xl text-green-500"/>
 
-                            <div className="mt-3 text-white text-xl">
-                                {entry.title}
-                            </div>
-                            <div className="mt-1 mb-5 text-gray-400 text-xl">
-                                {entry.duration}
-                            </div>
+            <FadeIn delay={1.5}>
+                <div className="h-full w-full flex items-center justify-center">
+                    <Carousel className="w-full max-w-lg h-full flex justify-center">
+                        <CarouselContent className="h-full w-full">
+                            { history.map((entry, index) => (
+                                <CarouselItem className="p-5 w-full h-full flex flex-col" key={index}>
+                                    <div className="w-full flex justify-center">
+                                        {entry.logo()}
+                                    </div>
 
-                            {entry.description.map((description, index) => (
-                                <li key={index} className="text-slate-400">
-                                    {description}
-                                </li>
-                            ))}                            
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
+                                    <div className="mt-3 text-white text-xl">
+                                        {entry.title}
+                                    </div>
+                                    <div className="mt-1 mb-5 text-gray-400 text-xl">
+                                        {entry.duration}
+                                    </div>
 
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
+                                    {entry.description.map((description, index) => (
+                                        <li key={index} className="text-slate-400">
+                                            {description}
+                                        </li>
+                                    ))}                            
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </Carousel>
+                </div>
+            </FadeIn>
         </div>
     );
 }
