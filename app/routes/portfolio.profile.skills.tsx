@@ -50,7 +50,10 @@ const skills = [
 export default function Skills()
 {
     const setTerminalDisabled = useTerminal();
-    useEffect(() => {setTerminalDisabled(true)},[]);
+    useEffect(() => {
+        setTerminalDisabled(true);
+        return () => { setTerminalDisabled(false); };
+      }, [setTerminalDisabled]);
 
     return (
         <div className="flex flex-col items-center space-y-5">
