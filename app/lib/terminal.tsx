@@ -5,11 +5,19 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 // ====================================================================================================
 interface TerminalProps {
     children: React.ReactNode;
-    className?: string;       
+    className?: string;
+    disabled?: boolean;    
 }
     
 // ****************************************************************************************************
-const Terminal: React.FC<TerminalProps> = ({ children, className = "" }) => {
+const Terminal: React.FC<TerminalProps> = ({ children, className = "", disabled = false }) => {
+  if (disabled)
+    return (
+      <>
+        {children}
+      </>
+    );
+
   return (
     <ScrollArea
       className={`relative bg-gray-900 rounded-md text-white p-4 shadow-lg border border-gray-700 ${className}`}
