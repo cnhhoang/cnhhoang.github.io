@@ -1,3 +1,6 @@
+import { useContext, useEffect } from "react";
+import { useTerminal } from "./portfolio";
+
 // ====================================================================================================
 const skills = [
     {
@@ -46,6 +49,9 @@ const skills = [
 //****************************************************************************************************
 export default function Skills()
 {
+    const setTerminalDisabled = useTerminal();
+    useEffect(() => {setTerminalDisabled(true)},[]);
+
     return (
         <div className="flex flex-col items-center space-y-5">
         {
