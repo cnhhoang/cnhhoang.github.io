@@ -1,3 +1,4 @@
+import { createContext, useContext, useState } from "react";
 import {
   Links,
   Meta,
@@ -8,10 +9,10 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import { LoaderCircle } from "lucide-react";
 import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
-import { LoaderCircle } from "lucide-react";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -26,6 +27,9 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+
+const LoadingContext = createContext((status: boolean)=>{});
+export const useLoading = () => useContext(LoadingContext);
 
 //****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -51,7 +55,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 // **************************
 export default function App() {
-  return <Outlet />;
+  const [isLoading, setLoading] = useState(false);
+
+  return (
+    <LoadingContext.Provider value={setLoading}>
+      { isLoading
+      ? <HydrateFallback/>
+      : <Outlet/>
+      }
+    </LoadingContext.Provider>
+
+  );
 }
 
 // **************************
@@ -64,3 +78,4 @@ export function HydrateFallback() {
     </div>
   );
 }
+
