@@ -1,60 +1,86 @@
 import LogoNodeJS from "~/assets/images/logo-nodejs.png";
-import { LogoGithub, LogoGithubAction, LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript } from "~/assets/logos";
+import { LogoGithub, LogoGithubAction, LogoMongoDB, LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript, LogoVercel } from "~/assets/logos";
+
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 import FadeIn from "~/lib/fade-in";
 import Typewriter from "~/lib/typewriter";
 
 // ====================================================================================================
 const techStack = [
-    {
-        tech: "TypeScript",
-        textSettings: "text-sky-600 font-bold",
-        category: "Programming Language",
-        logo: <LogoTypeScript/>,
-    },
-    {
-        tech: "Node.js",
-        textSettings: "font-bold bg-gradient-to-r from-green-600 via-green-300 to-green-700 bg-clip-text text-transparent",
-        category: "Runtime Environment",
-        logo: <img src={LogoNodeJS} className="transform scale-125"/>,
-    },
-    {
-        tech: "Remix",
-        textSettings: "text-blue-200 drop-shadow-remix-glow font-bold",
-        category: "Full-stack Framework",
-        logo: <LogoRemix/>,
-    },
-    {
-        tech: "React",
-        textSettings: "text-cyan-300 font-light",
-        category: "Frontend Library",
-        logo: <LogoReact/>,
-    },
+    // Frontend
     {
         tech: "TailwindCSS",
         textSettings: "text-sky-400 font-bold italic",
         category: "CSS Framework",
-        logo: <LogoTailwindCSS/>,
+        logo: <LogoTailwindCSS />,
     },
     {
         tech: "shadcn/ui",
         textSettings: "font-sans text-gray-400 font-light italic",
         category: "UI Component Library",
-        logo: <LogoSHADCN/>,
+        logo: <LogoSHADCN />,
     },
     {
-        tech: "Github",
+        tech: "React",
+        textSettings: "text-cyan-300 font-light",
+        category: "Frontend Library",
+        logo: <LogoReact />,
+    },
+  
+    // Application Logic Layer
+    {
+        tech: "TypeScript",
+        textSettings: "text-sky-600 font-bold",
+        category: "Programming Language",
+        logo: <LogoTypeScript />,
+    },
+    {
+        tech: "Remix",
+        textSettings: "text-blue-200 drop-shadow-remix-glow font-bold",
+        category: "Full-stack Framework",
+        logo: <LogoRemix />,
+    },
+    {
+        tech: "Node.js",
+        textSettings: "font-bold bg-gradient-to-r from-green-600 via-green-300 to-green-700 bg-clip-text text-transparent",
+        category: "Runtime Environment",
+        logo: <img src={LogoNodeJS} className="transform scale-125" />,
+    },
+    // Backend
+    {
+        tech: "Vercel",
+        textSettings: "font-sans font-black text-white",
+        category: "API Hosting Platform",
+        logo: <LogoVercel />,
+    },  
+    {
+        tech: "MongoDB",
+        textSettings: "font-serif text-green-400",
+        category: "Database",
+        logo: <LogoMongoDB />,
+    },
+    // Deployment and Hosting
+    {
+        tech: "GitHub",
         textSettings: "text-gray-600 opacity-80",
-        category: "Deployment Platform",
-        logo: <LogoGithub/>,
+        category: "Version Control",
+        logo: <LogoGithub />,
     },
     {
-        // tech: "Github Action",
-        tech: <span>Github Acti<span className="font-mono text-2xl text-blue-300">o</span>n</span>,
+        // tech: "GitHub Actions",
+        tech: (
+        <span>
+            GitHub Acti<span className="font-mono text-2xl text-blue-300">o</span>n
+        </span>
+        ),
         textSettings: "font-sans text-blue-550",
         category: "CI/CD Tool",
-        logo: <LogoGithubAction/>,
+        logo: <LogoGithubAction />,
     },
-];
+  ];
+  
 
 //****************************************************************************************************
 export default function TechStack()

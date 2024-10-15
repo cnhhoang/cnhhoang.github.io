@@ -19,7 +19,9 @@ const config: Config = {
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
+          '"Geist"',
         ],
+        geist: ["Geist", "Regular"],
       },
       fontWeight: {
         thin: '100',
