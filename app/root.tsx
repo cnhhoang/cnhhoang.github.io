@@ -12,6 +12,7 @@ import { LoaderCircle } from "lucide-react";
 import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
+import LoadingPage from "./components/loading-page";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -52,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 // **************************
 export default function App() {
   return (
-        <Outlet/>
+    <Outlet/>
   );
 }
 
@@ -60,9 +61,7 @@ export default function App() {
 export function HydrateFallback() {
   return (
     <div className={`text-6xl text-emerald-500 ${hScreenFit} w-full flex items-center justify-center`}>
-      <span>Page L</span>
-      <LoaderCircle className="h-10 w-10 relative top-[0.3rem] animate-spin" />
-      <span>ading...</span>
+      <LoadingPage/>
     </div>
   );
 }
