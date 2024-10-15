@@ -1,4 +1,3 @@
-import { createContext, useContext, useState } from "react";
 import {
   Links,
   Meta,
@@ -28,9 +27,6 @@ export const links: LinksFunction = () => [
   },
 ];
 
-const LoadingContext = createContext((status: boolean)=>{});
-export const useLoading = () => useContext(LoadingContext);
-
 //****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -55,16 +51,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 // **************************
 export default function App() {
-  const [isLoading, setLoading] = useState(false);
-
   return (
-    <LoadingContext.Provider value={setLoading}>
-      { isLoading
-      ? <HydrateFallback/>
-      : <Outlet/>
-      }
-    </LoadingContext.Provider>
-
+        <Outlet/>
   );
 }
 
