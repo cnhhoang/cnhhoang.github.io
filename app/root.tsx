@@ -8,7 +8,6 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
-import { LoaderCircle } from "lucide-react";
 import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";

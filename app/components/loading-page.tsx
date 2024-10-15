@@ -1,10 +1,11 @@
 import { LoaderCircle } from "lucide-react";
 
+// ====================================================================================================
+const skeletonColor = " bg-emerald-600 ";
 
+//****************************************************************************************************
 export default function LoadingPage()
 {
-    const skeletonColor = " bg-emerald-600 ";
-
     return (
         <div className="h-full w-full flex flex-col justify-center items-center space-y-6">
             <div className={`text-6xl text-emerald-500 flex items-center justify-center`}>
