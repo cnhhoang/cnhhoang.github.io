@@ -22,7 +22,6 @@ export default function LoadingPage()
 
                 <div className={`h-5 w-full rounded-md ${skeletonColor} animate-pulse`}/>
                 <div className={`h-5 w-full rounded-md ${skeletonColor} animate-pulse`}/>
-
             </div>
         </div>
     );

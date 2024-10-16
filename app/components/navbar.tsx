@@ -49,7 +49,7 @@ export default function NavBar()
       <div className={`relative sticky top-0 h-12 w-full
                       flex items-center px-5 z-10
                       focus:border-transparent select-none shadow-2xl
-                      bg-gradient-to-r from-slate-900 via-slate-950 via-75% to-violet-900`}
+                      bg-gradient-to-r from-slate-900 via-slate-950 via-70% to-sky-950`}
       >
         {/* -------------------------- */}
         <NavLink  
@@ -58,14 +58,16 @@ export default function NavBar()
             `text-2xl font-serif px-2 py-1 relative transition-colors duration-300
             hover:text-blue-400 active:text-blue-600
             ${isActive ? 'text-blue-500' : 'text-white'}`
-          }>
+          }
+        >
           Hoang Chung
         </NavLink>
 
         {/* -------------------------- */}
         <div className={`absolute top-1/2 left-1/2 flex
                         transform -translate-x-1/2 -translate-y-1/2 
-                        text-white text-xl`}>
+                        text-white text-xl`}
+        >
           { routes.map((route, index) => (
             <NavLink  
                 key={index}
@@ -77,7 +79,8 @@ export default function NavBar()
                   ${isActive || isPending 
                   ? 'font-bold text-sky-500 after:scale-x-100 hover:text-sky-400' 
                   : 'text-white after:scale-x-0'}`
-                }>
+                }
+              >
                 {route.display}
             </NavLink>
           ))}
@@ -88,7 +91,8 @@ export default function NavBar()
           { profileLinks.map((profile, key) => (
               <a  href={profile.href}  key={key}
                   className={`h-10 w-10 flex items-center justify-center
-                              grayscale transition hover:grayscale-0 focus:grayscale-0`}>
+                              grayscale transition hover:grayscale-0 focus:grayscale-0`}
+              >
                 { profile.icon }
               </a>
             ))
