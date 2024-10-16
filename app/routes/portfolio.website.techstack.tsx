@@ -1,9 +1,6 @@
 import LogoNodeJS from "~/assets/images/logo-nodejs.png";
 import { LogoGithub, LogoGithubAction, LogoMongoDB, LogoReact, LogoRemix, LogoSHADCN, LogoTailwindCSS, LogoTypeScript, LogoVercel } from "~/assets/logos";
 
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-
 import FadeIn from "~/lib/fade-in";
 import Typewriter from "~/lib/typewriter";
 
@@ -28,7 +25,6 @@ const techStack = [
         category: "Frontend Library",
         logo: <LogoReact />,
     },
-  
     // Application Logic Layer
     {
         tech: "TypeScript",
@@ -80,7 +76,6 @@ const techStack = [
         logo: <LogoGithubAction />,
     },
   ];
-  
 
 //****************************************************************************************************
 export default function TechStack()
