@@ -104,8 +104,10 @@ export default function PortfolioSideMenu()
                                 border-2 border-transparent rounded-full
                                 after:absolute after:inset-0 after:border-2 after:border-green-500 after:rounded-full after:origin-left after:scale-x-0 after:transition-transform after:duration-500 
                                 hover:text-green-300 hover:font-bold  active:text-green-600 active:font-bold
-                                ${isActive || isPending? 'text-green-500 font-bold border-green-500 after:scale-x-100' : 'text-white border-transparent after:scale-x-0'}
-                            `}          
+                                ${isActive || isPending
+                                  ? "text-green-500 font-bold border-green-500 after:scale-x-100 after:bg-gradient-to-r after:from-blue-950 after:to-blue-900 after:from-70% after:-z-10"
+                                  : "text-white border-transparent after:scale-x-0"}
+                                `}          
                             onClick={() => {
                                 setActiveTab(entry.title);
                                 if (entry.children)
