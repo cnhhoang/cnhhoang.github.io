@@ -49,7 +49,7 @@ export default function NavBar()
       <div className={`relative sticky top-0 h-12 w-full
                       flex items-center px-5 z-10
                       focus:border-transparent select-none shadow-2xl
-                      bg-gradient-to-r from-slate-900 via-slate-900 via-75% to-indigo-900`}
+                      bg-gradient-to-r from-slate-900 via-slate-950 via-75% to-violet-900`}
       >
         {/* -------------------------- */}
         <NavLink  

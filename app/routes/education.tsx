@@ -85,7 +85,7 @@ const history = [
 export default function Education()
 {
     return (
-        <div className="relative w-full p-5 text-white">
+        <div className="relative w-full p-4 text-white">
             <Typewriter text="$history | grep education" textSetting="text-xl text-green-500"/>
 
             <FadeIn delay={1.5}>
