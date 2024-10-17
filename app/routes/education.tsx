@@ -41,7 +41,7 @@ const history = [
                 <img src={LogoHCMUS} />
             </div>
         ),
-        organization: <div className="text-blue-500">Ho Chi Minh University of Science</div>,
+        organization: <div className="text-blue-700">Ho Chi Minh University of Science</div>,
         title:             
             <div className="rounded-md px-2 bg-blue-900 text-white font-bold">
                 Bachelor of Computer Science
@@ -66,7 +66,7 @@ const history = [
                 <img src={LogoPTNK} />
             </div>
         ),
-        organization: <div className="text-sky-200">VNU-HCM High School for the Gifted</div>,
+        organization: <div className="text-sky-100">VNU-HCM High School for the Gifted</div>,
         title:  <div className="rounded-md px-2 bg-sky-100 text-blue-800 font-bold">
                     Majoring in Information Technology
                 </div>,
