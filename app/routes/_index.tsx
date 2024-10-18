@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import InfoLogger from '~/components/info-logger';
 
 import Typewriter from '~/lib/typewriter';
 
@@ -40,6 +41,8 @@ export default function Index() {
           }
         </div>
       </div>
+
+      <InfoLogger/>
     </div>
   );
 }
