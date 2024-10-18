@@ -7,6 +7,9 @@ import {
 import {
     Sheet,
     SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
 } from "~/components/ui/sheet";
 import { hScreenFit } from "~/lib/utils";
 import StatusIndicator from "~/lib/status-indicator";
@@ -95,6 +98,7 @@ export default function PortfolioSideMenu()
                             ${isVisible ? 'animate-slideIn' : ''}`
                 }
             >
+                <SheetTitle/><SheetDescription/>
                 { portfolioMenuItems.map((entry, index) => (
                     <div key={index} className=" mt-5">
                         <NavLink 

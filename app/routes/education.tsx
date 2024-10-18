@@ -90,8 +90,8 @@ export default function Education()
 
             <FadeIn delay={1.5}>
                 <Accordion type="multiple" className="w-full none-select">
-                    {history.map((entry) => (
-                        <AccordionItem value={entry.id}>
+                    {history.map((entry, index) => (
+                        <AccordionItem value={entry.id} key={index}>
                             <AccordionTrigger className="none-select">
                                 <div className="flex none-select">
                                     {entry.logo()}
