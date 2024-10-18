@@ -21,10 +21,12 @@ const history = [
         ),
         organization: "Promithic",
         title: "Junior Software Developer - Penetration Tester",
-        duration: "July 2024 - Present",
+        duration: "July 2024 - October 2024",
         description: [
-            "Constructed a full web stack, with ongoing upgrades and data migration under the supervision of a senior lead. Developed a web platform as the only full-stack developer, ensuring high performance, maintainability, scalability, and reusability. Maintained thorough documentation and comprehensive history throughout the process. Additional details are confidential under an NDA.",
-            "Performed penetration testing following the standards outlined in the OWASP Testing Guide. Solved more than 100 PortSwigger labs, progressing towards Burp Suite Certified Practitioner certification."
+            "Developed a full-stack web platform using React, Remix, Tailwind CSS, Prisma, PostgreSQL.",
+            "Improved performance and ensured maintainability, scalability by writing reusable modules.",
+            "Utilized Git techniques to maintain detailed documentation and version control.",
+            "Performed web penetration testing using Burp Suite to identify vulnerabilities."
         ],
     },
     {
@@ -38,8 +40,10 @@ const history = [
         title: "Research Intern",
         duration: "May 2019 – September 2020",
         description: [
-            "Conducted research and published two papers on Encrypted Database. The works were peer-reviewed and accepted in international conferences. Honored with the Best Paper Award at SoICT2019.",
-            "Optimized the algorithm’s performance by approximately 20 times by applying Lazy Propagation into Segment Tree data structure."
+            "Conducted research on Encrypted Database.",
+            "Published two peer-reviewed, which were accepted in international conferences.",
+            "Honored with the Best Paper Award at SoICT2019.",
+            "Optimized the algorithm’s performance by applying Lazy Propagation into Segment Tree data structure."
         ],
     },
 ];
