@@ -30,8 +30,8 @@ export default function Achievements()
         <div className="h-full w-full flex flex-col space-y-3">
             <Typewriter text="$ ls achievements/" textSetting="text-green-500"/>
                 {   achievements.map((entry, index) => (
-                        <FadeIn delay={1+index*0.3}>
-                            <li key={index} className="text-lg">
+                        <FadeIn key={index} delay={1+index*0.3}>
+                            <li className="text-lg">
                                 {entry}
                             </li>
                         </FadeIn>
