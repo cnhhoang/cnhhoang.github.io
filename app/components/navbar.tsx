@@ -46,8 +46,8 @@ const routes = [
 export default function NavBar()
 {
   return (
-      <div className={`relative sticky top-0 h-12 w-full
-                      flex items-center px-5 z-10
+      <div className={`relative sticky top-0 sm:h-12 w-full
+                      flex items-center px-2 sm:px-5 z-10
                       focus:border-transparent select-none shadow-2xl
                       bg-gradient-to-r from-slate-900  via-50% via-slate-950 to-blue-950`}
       >
@@ -55,8 +55,10 @@ export default function NavBar()
         <NavLink  
           to="/" 
           className={({ isActive }) =>
-            `text-2xl font-serif px-2 py-1 relative transition-colors duration-300
+            `font-serif transition-colors duration-300 
             hover:text-blue-400 active:text-blue-600
+            text-xl sm:text-2xl 
+            w-10 sm:w-fit
             ${isActive ? 'text-blue-500' : 'text-white'}`
           }
         >
@@ -64,16 +66,16 @@ export default function NavBar()
         </NavLink>
 
         {/* -------------------------- */}
-        <div className={`absolute top-1/2 left-1/2 flex
-                        transform -translate-x-1/2 -translate-y-1/2 
-                        text-white text-xl`}
+        <div className={`absolute flex transform 
+                        right-1 sm:right-1/2 sm:translate-x-1/2`}
         >
           { routes.map((route, index) => (
             <NavLink  
                 key={index}
                 to={route.link} 
                 className={({ isActive, isPending }) =>
-                  `text-lg mx-5 py-1.5 px-1 relative transition-all transform duration-300 
+                  `text-md sm:text-lg mx-1 sm:mx-5 py-1.5 
+                  relative transition-all transform duration-300 
                   hover:scale-110 hover:text-sky-300 active:text-sky-600
                   after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-sky-500 after:w-full after:origin-left after:transition-transform after:duration-500 
                   ${isActive || isPending 
@@ -87,10 +89,10 @@ export default function NavBar()
         </div>
 
         {/* -------------------------- */}
-        <div className="ml-auto flex items-center space-x-3">
+        <div className={`ml-auto flex items-center space-x-3`}>
           { profileLinks.map((profile, key) => (
               <a  href={profile.href}  key={key}
-                  className={`h-10 w-10 flex items-center justify-center
+                  className={`hidden sm:block h-10 w-10 flex items-center justify-center
                               grayscale transition hover:grayscale-0 focus:grayscale-0`}
               >
                 { profile.icon }
