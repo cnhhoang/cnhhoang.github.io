@@ -14,8 +14,7 @@ import Typewriter from "~/lib/typewriter";
 
 // ====================================================================================================
 const history = [
-    {
-        id: "monash",
+    {   id: "monash",
         logo: () => (
             <div id="monash" className="h-fit w-12 mr-2 none-select ">
                 <LogoMonash/>
@@ -34,10 +33,9 @@ const history = [
             "Commendation letter for excellent academic performance.",
         ],
     },
-    {
-        id: "hcmus",
+    {   id: "hcmus",
         logo: () => (
-            <div id="hcmus" className="h-fit w-14 -translate-x-0.5 -translate-y-1 none-select">
+            <div id="hcmus" className="h-fit w-14 -translate-x-0.5 -translate-y scale-[105%] none-select">
                 <img src={LogoHCMUS} />
             </div>
         ),
@@ -59,16 +57,20 @@ const history = [
             "Scholarships for excellent academic performance.",
         ],
     },    
-    {
-        id: "ptnk",
+    {   id: "ptnk",
         logo: () => (
-            <div id="ptnk" className="translate-y-1.5 h-fit w-12 mr-2 none-select">
+            <div id="ptnk" className="h-fit w-14 scale-110 mr-2 none-select">
                 <img src={LogoPTNK} />
             </div>
         ),
-        organization: <div className="text-sky-100">VNU-HCM High School for the Gifted</div>,
-        title:  <div className="rounded-md px-2 bg-sky-100 text-blue-800 font-bold">
-                    Majoring in Information Technology
+        organization:   <div className="text-sky-100 flex">
+                            <span className="hidden sm:block mr-1"> VNU-HCM </span>
+                            High School for the Gifted
+                        </div>,
+        title:  <div className="rounded-md px-2 bg-sky-100 text-blue-800 font-bold flex">
+                    <span className="mr-1"> Majoring in  </span>
+                    <span className="hidden sm:block"> Information Technology </span> 
+                    <span className="sm:hidden"> IT </span>
                 </div>,
         duration: "2016",
         description: [
@@ -94,18 +96,20 @@ export default function Education()
                         <AccordionItem value={entry.id} key={index}>
                             <AccordionTrigger className="none-select">
                                 <div className="flex none-select">
+                                    <div className="">
                                     {entry.logo()}
+                                    </div>
                                     <FlippingLogo id={entry.id} flipCount={4}/>
                                     <div className="flex flex-col items-start none-select">
-                                        <div className={`text-l`}>
+                                        <div className={`text-base`}>
                                             {entry.organization}
                                         </div>
-                                        <div className="text-2xl">
+                                        <div className="text-base sm:text-2xl">
                                             {entry.title}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-xl text-emerald-400 ml-auto mr-5">
+                                <div className="hidden sm:block text-xl text-emerald-400 ml-auto mr-5">
                                     {entry.duration}
                                 </div>
                             </AccordionTrigger>
