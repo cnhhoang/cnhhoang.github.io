@@ -13,7 +13,6 @@ import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
 import LoadingPage from "./components/loading-page";
-import InfoLogger from "./components/info-logger";
 import { useEffect, useState } from "react";
 import { postInfo } from "./lib/log-info";
 import { updateHistory } from "./lib/update-history";
@@ -31,15 +30,6 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
-
-type MongoDBResponse = {
-  success: boolean;
-  message: string;
-  result: {
-    acknowledged: boolean;
-    insertedId: string;
-  };
-};
 
 //****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -66,24 +56,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
 // **************************
 export default function App() {
   const [data, setData] = useState(null);
-  const location = useLocation(); // Hook to get the current location
-  const [currentURL, setCurrentURL] = useState<string>(location.pathname);
+  const location = useLocation();
   const [id, setId] = useState<string>("");
 
   /// Get URL
   useEffect(() => {
     async function loadData() {
       const currentData = await postInfo();
-      setData(currentData); // Set data to state
+      setData(currentData);
       setId(currentData ? currentData["result"]["insertedId"] : "");
-      // setData(await postInfo());
     }
     if (data === null)
       loadData();
-
-    setCurrentURL(location.pathname);
-    console.log("Current URL: ", location.pathname);
-    updateHistory(id, location.pathname);
+    if (id)
+      updateHistory(id, location.pathname);
   }, [location]); 
 
   /// Render

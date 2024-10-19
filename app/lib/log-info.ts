@@ -19,7 +19,7 @@ export async function postInfo() {
         console.log("Attempt to POST data...:", IP);
 
         try {
-            const response = await fetch("https://vercel-api-git-main-hoang-chungs-projects.vercel.app/api/postIPAddress", {
+            const response = await fetch("https://vercel-api-git-main-hoang-chungs-projects.vercel.app/api/postInfo", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
