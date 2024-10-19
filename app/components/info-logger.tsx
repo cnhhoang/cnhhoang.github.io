@@ -17,10 +17,8 @@ async function getIP() {
 // --------------------------
 
 //****************************************************************************************************
-export default function InfoLogger() {
+function InfoLogger() {
     const [IP, setIP] = useState(null);
-
-    // Fetch IP upon mount
     useEffect(() => {
         async function fetchAndSetIP() {
             const ip = await getIP();
@@ -50,7 +48,5 @@ export default function InfoLogger() {
         }
     }, [IP]); 
 
-    return (
-        <></>
-    );
+    return (<></>);
 }

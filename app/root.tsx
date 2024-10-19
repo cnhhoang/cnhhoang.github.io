@@ -4,6 +4,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
@@ -12,6 +13,9 @@ import { backgroundColor, hScreenFit } from "./lib/utils";
 
 import NavBar from "./components/navbar";
 import LoadingPage from "./components/loading-page";
+import InfoLogger from "./components/info-logger";
+import { useEffect, useState } from "react";
+import { postInfo } from "./lib/log-info";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -51,10 +55,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 // **************************
 export default function App() {
+  const [data, setData] = useState(null);
+  const location = useLocation(); // Hook to get the current location
+  const [currentURL, setCurrentURL] = useState<string>(location.pathname);
+
+  /// POST data
+  // useEffect(() => {
+  //   async function loadData() {
+  //     data = postInfo()
+  //     .then((data) => console.log(data));
+  //   }
+  //   if (data === undefined)
+  //     loadData();
+  // }, []);  
+
+  /// Get URL
+  useEffect(() => {
+    async function loadData() {
+      const currentData = postInfo()
+      .then((currentData) => setData(currentData))
+      .then((data) => console.log(data));
+    }
+    if (data === null)
+      loadData();
+
+    setCurrentURL(location.pathname);
+    console.log("Current URL: ", location.pathname);
+  }, [location]); 
+
+  /// Render
   return (
-    <Outlet/>
+    <div>
+      <Outlet />
+    </div>
   );
 }
+
 
 // **************************
 export function HydrateFallback() {
