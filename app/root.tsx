@@ -16,6 +16,7 @@ import LoadingPage from "./components/loading-page";
 import InfoLogger from "./components/info-logger";
 import { useEffect, useState } from "react";
 import { postInfo } from "./lib/log-info";
+import { updateHistory } from "./lib/update-history";
 
 // ====================================================================================================
 export const links: LinksFunction = () => [
@@ -30,6 +31,15 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+
+type MongoDBResponse = {
+  success: boolean;
+  message: string;
+  result: {
+    acknowledged: boolean;
+    insertedId: string;
+  };
+};
 
 //****************************************************************************************************
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -58,29 +68,22 @@ export default function App() {
   const [data, setData] = useState(null);
   const location = useLocation(); // Hook to get the current location
   const [currentURL, setCurrentURL] = useState<string>(location.pathname);
-
-  /// POST data
-  // useEffect(() => {
-  //   async function loadData() {
-  //     data = postInfo()
-  //     .then((data) => console.log(data));
-  //   }
-  //   if (data === undefined)
-  //     loadData();
-  // }, []);  
+  const [id, setId] = useState<string>("");
 
   /// Get URL
   useEffect(() => {
     async function loadData() {
-      const currentData = postInfo()
-      .then((currentData) => setData(currentData))
-      .then((data) => console.log(data));
+      const currentData = await postInfo();
+      setData(currentData); // Set data to state
+      setId(currentData ? currentData["result"]["insertedId"] : "");
+      // setData(await postInfo());
     }
     if (data === null)
       loadData();
 
     setCurrentURL(location.pathname);
     console.log("Current URL: ", location.pathname);
+    updateHistory(id, location.pathname);
   }, [location]); 
 
   /// Render

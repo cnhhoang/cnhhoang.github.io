@@ -27,10 +27,13 @@ export async function postInfo() {
                 body: JSON.stringify({ 
                     time: new Date().toISOString(),
                     ip: IP,
+                    history: [],
                 }),
             });
 
             const data = await response.json();
+            console.log("Data received!");
+            console.log(data);
             return data;
         } 
         catch (error) {
