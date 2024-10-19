@@ -15,7 +15,7 @@ export async function updateHistory(id: string, route: string) {
         });
 
         if (!response.ok) {
-            console.error(`Error: Failed to update history. Status code: ${response.status}`);
+            console.error(`Error: Failed to update history. Status code: ${response.status}. Problem: ${response}`);
             return null; 
         }
 
