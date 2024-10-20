@@ -90,7 +90,7 @@ export default function TechStack()
                 {techStack.map((entry, index) => (
                     <FadeIn key={index} delay={1+index/3} asChild>
                         <div className="border rounded-lg border-zinc-800
-                                        w-96 p-3 bg-gray-950
+                                        w-11/12 max-w-96 p-3 bg-gray-950
                                         flex items-center"
                         >
                             <div className="text-sm text-gray-500">
