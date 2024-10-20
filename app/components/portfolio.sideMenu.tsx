@@ -10,7 +10,6 @@ import {
     SheetDescription,
     SheetTitle,
 } from "~/components/ui/sheet";
-import { hScreenFit } from "~/lib/utils";
 import StatusIndicator from "~/lib/status-indicator";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
@@ -99,7 +98,9 @@ export default function PortfolioSideMenu()
             className={className}
             onClick={handleClick}
         >
-            <ChevronRight className={`transform ${rotate}`} />
+            <div className={`transform ${rotate}`}>
+                <ChevronRight className={`text-green-500 animate-bounce-right`} />
+            </div>
         </Button>  
     );
     const [rotate, setRotate] = useState("");
@@ -112,15 +113,15 @@ export default function PortfolioSideMenu()
 
     return (
         <Sheet modal={false} open={openState}>  
-            <MenuClose className="absolute z-20 right-0 border-green-500 sm:hidden"/>
+            <MenuClose className="absolute z-20 right-0 bottom-0 border-green-500 sm:hidden"/>
+
             <SheetContent 
                 side={"right"} 
-                className={`h-96 sm:h-[calc(100vh-3rem)] ${menuWidth} z-10 
+                className={`h-fit sm:h-[calc(100vh-3rem)] ${menuWidth} z-10 
                             mt-auto sm:mt-12 ${backgroundSetting}
                             ${openState ? 'animate-slideIn' : 'animate-slideOut'}`
                 }
             >
-                {/* <MenuClose className="absolute z-20 right-0 bottom-0 border-green-500 sm:hidden"/> */}
                 <SheetTitle/><SheetDescription/>
                 { portfolioMenuItems.map((entry, index) => (
                     <div key={index} className=" mt-5">

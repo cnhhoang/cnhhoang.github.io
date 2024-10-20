@@ -13,9 +13,13 @@ export default function PortfolioIndex()
             <Typewriter text="$ man portfolio" textSetting="text-green-500"/>
 
             <FadeIn delay={1.25}>
-                <div className="space-y-5 flex">
-                    Select an option from the side menu on the right to navigate.
-                    <StepForward className="ml-4 animate-bounce-right"/>    
+                <div className="hidden sm:flex">
+                    <div className="space-y-5 flex">
+                        Select an option from the menu on the right to navigate.
+                    </div>
+                </div>
+                <div className="sm:hidden">
+                    Select an option from the bottom menu to navigate.
                 </div>
             </FadeIn>
         </div>
