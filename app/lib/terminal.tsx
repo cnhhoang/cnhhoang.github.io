@@ -24,14 +24,14 @@ const Terminal: React.FC<TerminalProps> = ({ children, className = "", disabled 
       style={{ fontFamily: "monospace" }}
     >
       {/* Terminal header */}
-      <div className="absolute z-10 bg-gray-900 w-full flex space-x-2 pb-2 mb-2 border-b border-gray-700">
+      <div className="hidden sm:flex absolute z-10 bg-gray-900 w-full space-x-2 pb-2 mb-2 border-b border-gray-700">
         <div className="w-3 h-3 bg-red-500 rounded-full"></div>
         <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
       </div>
       
       {/* Terminal content */}
-      <div className="overflow-auto z-0 mt-10 text-slate-400">
+      <div className="overflow-auto z-0 sm:mt-10 text-slate-400">
         {children}
       </div>
     </ScrollArea>
