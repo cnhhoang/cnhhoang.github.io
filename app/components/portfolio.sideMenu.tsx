@@ -6,16 +6,14 @@ import {
 
 import {
     Sheet,
-    SheetClose,
     SheetContent,
     SheetDescription,
-    SheetHeader,
     SheetTitle,
 } from "~/components/ui/sheet";
 import { hScreenFit } from "~/lib/utils";
 import StatusIndicator from "~/lib/status-indicator";
 import { Button } from "./ui/button";
-import { ChevronDown, ChevronLastIcon, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 // ====================================================================================================
 export const menuWidth: string = "w-full sm:w-72";
@@ -93,25 +91,28 @@ export default function PortfolioSideMenu()
         setOpenState(true);
       }, [location]);
 
-      /// Handle Mobile/Vertical screen
-
-      const [rotate, setRotate] = useState("");
-      function handleClick()
-      {
-        setOpenState(!openState);
-        setRotate(rotate==="" ? "rotate-180" : "");
-        console.log("Success!")
-      }
+    /// Handle Mobile/Vertical screen
+    const MenuClose = ({ className }: { className: string }) => (
+        <Button 
+            variant="outline" 
+            size="icon" 
+            className={className}
+            onClick={handleClick}
+        >
+            <ChevronRight className={`transform ${rotate}`} />
+        </Button>  
+    );
+    const [rotate, setRotate] = useState("");
+    function handleClick()
+    {
+    setOpenState(!openState);
+    setRotate(rotate==="" ? "rotate-180" : "");
+    console.log("Success!")
+    }
 
     return (
         <Sheet modal={false} open={openState}>  
-            <Button 
-                variant="outline" size="icon" 
-                className="absolute z-20 right-0 border-green-500 sm:hidden"
-                onClick={handleClick}
-            >
-                <ChevronRight className={`transform ${rotate}`}/>
-            </Button>         
+            <MenuClose className="absolute z-20 right-0 border-green-500 sm:hidden"/>
             <SheetContent 
                 side={"right"} 
                 className={`h-96 sm:h-[calc(100vh-3rem)] ${menuWidth} z-10 
@@ -119,6 +120,7 @@ export default function PortfolioSideMenu()
                             ${openState ? 'animate-slideIn' : 'animate-slideOut'}`
                 }
             >
+                {/* <MenuClose className="absolute z-20 right-0 bottom-0 border-green-500 sm:hidden"/> */}
                 <SheetTitle/><SheetDescription/>
                 { portfolioMenuItems.map((entry, index) => (
                     <div key={index} className=" mt-5">
@@ -153,10 +155,11 @@ export default function PortfolioSideMenu()
                                 <NavLink
                                     key={childIndex}
                                     to={child.link}
-                                    className={({ isActive }) =>
-                                    `block px-2 py-1 transition-colors duration-300
-                                    hover:text-emerald-200 active:text-emerald-400
-                                    ${activeChild===child.title ? "text-emerald-400 before:border-2 before:rounded-r-full before:border-emerald-400 before:mr-1" : "text-gray-300"}
+                                    className={`block px-2 py-1 transition-colors duration-300
+                                                hover:text-emerald-200 active:text-emerald-400
+                                                ${activeChild===child.title 
+                                                ? "text-emerald-400 before:border-2 before:rounded-r-full before:border-emerald-400 before:mr-1" 
+                                                : "text-gray-300"}
                                     `}
                                     onClick={() => setActiveChild(child.title)}
                                 >
@@ -169,7 +172,7 @@ export default function PortfolioSideMenu()
                 ))}
 
                 {/* Status legend */}
-                <div className="absolute bottom-3 right-3 text-sm text-gray-300">
+                <div className="absolute top-3 sm:top-auto sm:bottom-3 right-3 text-sm text-gray-300">
                     <div className="flex">
                         <div className="flex items-center mr-1">
                             <StatusIndicator status="active" size="3"/>
