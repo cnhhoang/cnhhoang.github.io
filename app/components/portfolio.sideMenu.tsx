@@ -158,7 +158,7 @@ export default function PortfolioSideMenu()
                                     className={`block px-2 py-1 transition-colors duration-300
                                                 hover:text-emerald-200 active:text-emerald-400
                                                 ${activeChild===child.title 
-                                                ? "text-emerald-400 before:border-2 before:rounded-r-full before:border-emerald-400 before:mr-1" 
+                                                ? "text-emerald-400 before:border-2 before:rounded-full before:border-emerald-400 before:mr-1" 
                                                 : "text-gray-300"}
                                     `}
                                     onClick={() => setActiveChild(child.title)}
