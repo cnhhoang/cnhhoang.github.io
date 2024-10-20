@@ -6,6 +6,7 @@ import {
 
 import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetHeader,
@@ -13,9 +14,11 @@ import {
 } from "~/components/ui/sheet";
 import { hScreenFit } from "~/lib/utils";
 import StatusIndicator from "~/lib/status-indicator";
+import { Button } from "./ui/button";
+import { ChevronDown, ChevronLastIcon, ChevronRight } from "lucide-react";
 
 // ====================================================================================================
-export const menuWidth: string = "w-72";
+export const menuWidth: string = "w-full sm:w-72";
 export const wScreenFit: string = "w-[calc(100vw-17rem)]";
 const backgroundSetting: string = " bg-gradient-to-b from-slate-900 via-sky-900 to-blue-950 border-zinc-700 border-2 rounded-lg border-emerald-800 ";
 
@@ -80,22 +83,40 @@ const portfolioMenuItems = [
 // ****************************************************************************************************
 export default function PortfolioSideMenu()
 {
-    const [isVisible, setIsVisible] = useState(false);
+    const [openState, setOpenState] = useState(true);
     const [activeTab, setActiveTab] = useState("");
     const [activeChild, setActiveChild] = useState("");
     const location = useLocation();
     useEffect(() => {
         if (location.pathname === "/portfolio")
             setActiveTab("");
-        setIsVisible(true);
+        setOpenState(true);
       }, [location]);
 
+      /// Handle Mobile/Vertical screen
+
+      const [rotate, setRotate] = useState("");
+      function handleClick()
+      {
+        setOpenState(!openState);
+        setRotate(rotate==="" ? "rotate-180" : "");
+        console.log("Success!")
+      }
+
     return (
-        <Sheet modal={false} open={true}>
+        <Sheet modal={false} open={openState}>  
+            <Button 
+                variant="outline" size="icon" 
+                className="absolute z-20 right-0 border-green-500 sm:hidden"
+                onClick={handleClick}
+            >
+                <ChevronRight className={`transform ${rotate}`}/>
+            </Button>         
             <SheetContent 
                 side={"right"} 
-                className={`${hScreenFit} ${menuWidth} mt-12 ${backgroundSetting}
-                            ${isVisible ? 'animate-slideIn' : ''}`
+                className={`h-96 sm:h-[calc(100vh-3rem)] ${menuWidth} z-10 
+                            mt-auto sm:mt-12 ${backgroundSetting}
+                            ${openState ? 'animate-slideIn' : 'animate-slideOut'}`
                 }
             >
                 <SheetTitle/><SheetDescription/>
@@ -169,6 +190,6 @@ export default function PortfolioSideMenu()
                     </div>
                 </div>
             </SheetContent>
-        </Sheet>        
+        </Sheet>    
     );
 }

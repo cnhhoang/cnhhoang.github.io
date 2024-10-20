@@ -6,7 +6,7 @@ import Terminal from "~/lib/terminal";
 import { hScreenFit, terminalSize } from "~/lib/utils";
 
 // ====================================================================================================
-export const wScreenFit: string = "w-[calc(100vw-17rem)]";
+export const wScreenFit: string = "w-full sm:w-[calc(100vw-17rem)]";
 const TerminalContext = createContext((status: boolean)=>{});
 
 // ****************************************************************************************************
@@ -18,9 +18,10 @@ export default function Portfolio()
         <>
             <PortfolioSideMenu/>
             
-            <div className={`relative min-${hScreenFit} ${wScreenFit} 
-                            ${terminalDisabled ? "flex p-5"
-                            : "flex items-center justify-center"
+            <div className={`hidden sm:flex
+                            relative min-${hScreenFit} ${wScreenFit} 
+                            ${terminalDisabled ? "p-5"
+                            : "items-center justify-center"
                             }`}
             >
                 <TerminalContext.Provider value={setTerminalDisabled}>
@@ -29,6 +30,14 @@ export default function Portfolio()
                     </Terminal>
                 </TerminalContext.Provider>
             </div>
+
+            <div className={`sm:hidden 
+                            relative min-${hScreenFit} ${wScreenFit} 
+                            p-5
+                        `}
+            >
+                <Outlet/>
+            </div>            
         </>
     );
 }

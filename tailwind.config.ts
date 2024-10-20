@@ -76,6 +76,10 @@ const config: Config = {
           '0%': { transform: 'translateX(100%)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        slideOut: {
+          '0%': { transform: 'translateX(0)', opacity: '1' },
+          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        },
         "spin": {
             from: { transform: 'rotate(0deg)',},
             to: { transform: 'rotate(360deg)',},
@@ -98,6 +102,7 @@ const config: Config = {
         "bounce-right": 'bounce-right 1s infinite',
         fadeIn: 'fadeIn 1s ease-in forwards',
         slideIn: 'slideIn 0.5s ease-out forwards',
+        slideOut: 'slideOut 0.5s ease-out forwards',
         spin: 'spin 1s linear infinite',
         ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
         pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
