@@ -21,7 +21,7 @@ const history = [
             </div>),
         organization: "Monash University",
         title: 
-            <div className="rounded-md px-2 bg-white text-black font-bold">
+            <div className="rounded-sm sm:rounded-md px-2 bg-white text-black">
                 Master of Cybersecurity
             </div>,
         duration: "July 2024",
@@ -41,7 +41,7 @@ const history = [
         ),
         organization: <div className="text-blue-700">Ho Chi Minh University of Science</div>,
         title:             
-            <div className="rounded-md px-2 bg-blue-900 text-white font-bold">
+            <div className="rounded-sm sm:rounded-md px-2 bg-blue-900 text-white">
                 Bachelor of Computer Science
             </div>,
         duration: "2020",
@@ -67,7 +67,7 @@ const history = [
                             <span className="hidden sm:block mr-1"> VNU-HCM </span>
                             High School for the Gifted
                         </div>,
-        title:  <div className="rounded-md px-2 bg-sky-100 text-blue-800 font-bold flex">
+        title:  <div className="rounded-sm sm:rounded-md px-2 bg-sky-100 text-blue-800 flex">
                     <span className="mr-1"> Majoring in  </span>
                     <span className="hidden sm:block"> Information Technology </span> 
                     <span className="sm:hidden"> IT </span>
@@ -104,7 +104,7 @@ export default function Education()
                                         <div className={`text-base`}>
                                             {entry.organization}
                                         </div>
-                                        <div className="text-base sm:text-2xl">
+                                        <div className="text-base sm:text-2xl font-bold">
                                             {entry.title}
                                         </div>
                                     </div>

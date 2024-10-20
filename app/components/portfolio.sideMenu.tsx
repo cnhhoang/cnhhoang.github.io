@@ -106,9 +106,8 @@ export default function PortfolioSideMenu()
     const [rotate, setRotate] = useState("");
     function handleClick()
     {
-    setOpenState(!openState);
-    setRotate(rotate==="" ? "rotate-180" : "");
-    console.log("Success!")
+        setOpenState(!openState);
+        setRotate(rotate==="" ? "rotate-180" : "");
     }
 
     return (
