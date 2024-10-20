@@ -20,7 +20,7 @@ const effectTime = 1500;
 export default function About()
 {
   const [screenSettings, setscreenSettings] = useState("scale-50 skew-x-6 -skew-y-1");
-  const [textSetting, setTextSetting] = useState("text-green-500 text-[90px]");
+  const [textSetting, setTextSetting] = useState("text-green-500 text-[60px] sm:text-[90px]");
   useEffect(() => {
     const timer = setTimeout(() => {
         setscreenSettings("h-full w-full");
