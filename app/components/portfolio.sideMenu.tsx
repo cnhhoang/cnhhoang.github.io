@@ -113,7 +113,7 @@ export default function PortfolioSideMenu()
 
     return (
         <Sheet modal={false} open={openState}>  
-            <MenuClose className="absolute z-20 right-0 bottom-0 border-green-500 sm:hidden"/>
+            <MenuClose className="absolute fixed z-20 right-0 bottom-0 border-green-500 sm:hidden"/>
 
             <SheetContent 
                 side={"right"} 
@@ -124,7 +124,7 @@ export default function PortfolioSideMenu()
             >
                 <SheetTitle/><SheetDescription/>
                 { portfolioMenuItems.map((entry, index) => (
-                    <div key={index} className=" mt-5">
+                    <div key={index} className="mb-5">
                         <NavLink 
                             to={entry.link} 
                             className={({ isActive, isPending  }) =>
@@ -174,24 +174,27 @@ export default function PortfolioSideMenu()
 
                 {/* Status legend */}
                 <div className="absolute top-3 sm:top-auto sm:bottom-3 right-3 text-sm text-gray-300">
-                    <div className="flex">
-                        <div className="flex items-center mr-1">
-                            <StatusIndicator status="active" size="3"/>
-                        </div>
-                        : In Progress
-                    </div>
-                    <div className="flex">
-                        <div className="flex items-center mr-1">
-                            <StatusIndicator status="queued" size="3"/>
-                        </div>
-                        : To Be Updated
-                    </div>
-                    <div className="flex">
-                        <div className="flex items-center mr-1">
-                            <StatusIndicator status="pending" size="3"/>
-                        </div>
-                        : Pending
-                    </div>
+                    {[
+                        {
+                            status: "active",
+                            description: "In Progress",
+                        },
+                        {
+                            status: "queued",
+                            description: "To Be Updated",
+                        },
+                        {
+                            status: "pending",
+                            description: "Pending",
+                        },
+                    ].map((entry, index) => (
+                        <div className="flex" key={index}>
+                            <div className="flex items-center mr-1">
+                                <StatusIndicator status={entry.status} size="3"/>
+                            </div>
+                            : {entry.description}
+                        </div>                        
+                    ))}
                 </div>
             </SheetContent>
         </Sheet>    
