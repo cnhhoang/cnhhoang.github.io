@@ -46,7 +46,7 @@ const routes = [
 export default function NavBar()
 {
   return (
-      <div className={`relative sticky top-0 sm:h-12 w-full
+      <div className={`relative sticky top-0 h-16 sm:h-12 w-full
                       flex items-center px-2 sm:px-5 z-10
                       focus:border-transparent select-none shadow-2xl
                       bg-gradient-to-r from-slate-900  via-50% via-slate-950 to-blue-950`}
