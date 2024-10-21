@@ -20,7 +20,7 @@ const history = [
             </div>
         ),
         organization: "Promithic",
-        title: "Junior Software Developer - Penetration Tester",
+        title: "Junior Security Consultant",
         duration: "July 2024 - October 2024",
         description: [
             "Developed a full-stack web platform using React, Remix, Tailwind CSS, Prisma, PostgreSQL.",
