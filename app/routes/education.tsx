@@ -40,7 +40,7 @@ const history = [
                 <img src={LogoHCMUS} />
             </div>
         ),
-        organization: <div className="text-blue-700">Ho Chi Minh University of Science</div>,
+        organization: <div className="text-sky-500">Ho Chi Minh University of Science</div>,
         title:             
             <div className="rounded-sm sm:rounded-md px-2 bg-blue-900 text-white">
                 Bachelor of Computer Science
