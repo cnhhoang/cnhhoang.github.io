@@ -74,7 +74,12 @@ const portfolioMenuItems = [
             },                       
         ],
         status: "active",
-    }
+    },
+    {
+        title: "Admin Panel",
+        link: "admin-panel",
+        status: "pending",
+    },
 ];
 
 // ****************************************************************************************************
