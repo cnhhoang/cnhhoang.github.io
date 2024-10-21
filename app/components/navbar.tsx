@@ -46,8 +46,8 @@ const routes = [
 export default function NavBar()
 {
   return (
-      <div className={`relative sticky top-0 h-16 sm:h-12 w-full
-                      flex items-center px-2 sm:px-5 z-10
+      <div className={`relative sticky top-0 h-16 lg:h-12 w-full
+                      flex items-center px-2 lg:px-5 z-10
                       focus:border-transparent select-none shadow-2xl
                       bg-gradient-to-r from-slate-900  via-50% via-slate-950 to-blue-950`}
       >
@@ -67,7 +67,7 @@ export default function NavBar()
 
         {/* -------------------------- */}
         <div className={`absolute flex transform 
-                        right-1 sm:right-1/2 sm:translate-x-1/2`}
+                        right-1 lg:right-1/2 lg:translate-x-1/2`}
         >
           { routes.map((route, index) => (
             <NavLink  
@@ -92,7 +92,7 @@ export default function NavBar()
         <div className={`ml-auto flex items-center space-x-3`}>
           { profileLinks.map((profile, key) => (
               <a  href={profile.href}  key={key}
-                  className={`hidden sm:block h-10 w-10 flex items-center justify-center
+                  className={`hidden lg:block h-10 w-10 flex items-center justify-center
                               grayscale transition hover:grayscale-0 focus:grayscale-0`}
               >
                 { profile.icon }
