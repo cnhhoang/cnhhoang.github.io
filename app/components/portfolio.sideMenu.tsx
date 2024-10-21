@@ -15,7 +15,7 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 
 // ====================================================================================================
-export const menuWidth: string = "w-full sm:w-72";
+export const menuWidth: string = "w-full lg:w-72";
 export const wScreenFit: string = "w-[calc(100vw-17rem)]";
 const backgroundSetting: string = " bg-gradient-to-b from-slate-900 via-sky-900 to-blue-950 border-zinc-700 border-2 rounded-lg border-emerald-800 ";
 
@@ -112,12 +112,12 @@ export default function PortfolioSideMenu()
 
     return (
         <Sheet modal={false} open={openState}>  
-            <MenuClose className="absolute fixed z-20 right-0 bottom-0 border-green-500 sm:hidden"/>
+            <MenuClose className="absolute fixed z-20 right-0 bottom-0 border-green-500 lg:hidden"/>
 
             <SheetContent 
                 side={"right"} 
-                className={`h-fit sm:h-[calc(100vh-3rem)] ${menuWidth} z-10 
-                            mt-auto sm:mt-12 ${backgroundSetting}
+                className={`h-fit lg:h-[calc(100vh-3rem)] ${menuWidth} z-10 
+                            mt-auto lg:mt-12 ${backgroundSetting}
                             ${openState ? 'animate-slideIn' : 'animate-slideOut'}`
                 }
             >
@@ -172,7 +172,7 @@ export default function PortfolioSideMenu()
                 ))}
 
                 {/* Status legend */}
-                <div className="absolute top-3 sm:top-auto sm:bottom-3 right-3 text-sm text-gray-300">
+                <div className="absolute top-3 lg:top-auto lg:bottom-3 right-3 text-sm text-gray-300">
                     {[
                         {
                             status: "active",
