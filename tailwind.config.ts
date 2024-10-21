@@ -3,6 +3,26 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    borderRadius: {
+      'none': '0',
+      'sm': '0.125rem',
+      DEFAULT: '0.25rem',
+      'md': '0.375rem',
+      'lg': '0.5rem',
+      'xl': '1rem',
+      '2xl': '2rem',
+      'full': '9999px',
+    },
+    borderWidth: {
+      DEFAULT: '1px',
+      '0': '0',
+      '2': '2px',
+      '3': '3px',
+      '4': '4px',
+      '6': '6px',
+      '8': '8px',
+      '24':'24px',
+    },    
     extend: {
       colors: {
         blue: {
