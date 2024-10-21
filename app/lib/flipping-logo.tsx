@@ -14,7 +14,7 @@ const FlippingLogo: React.FC<FlippingLogoProps> = ({ id, flipCount }) => {
         if (element) {
             element.classList.add('transform', 'transition-transform', 'duration-1000');
 
-            const observer = new IntersectionObserver((entries) => {
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         for (let i = 0; i < flipCount; i++) {
@@ -26,6 +26,8 @@ const FlippingLogo: React.FC<FlippingLogoProps> = ({ id, flipCount }) => {
                                 }
                             }, i * 1000); 
                         }
+
+                        observer.disconnect();
                     }
                 });
             }, {
@@ -33,7 +35,6 @@ const FlippingLogo: React.FC<FlippingLogoProps> = ({ id, flipCount }) => {
             });
 
             observer.observe(element);
-
             return () => {
                 observer.disconnect();
             };
