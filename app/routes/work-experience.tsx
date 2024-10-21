@@ -52,12 +52,12 @@ const history = [
 export default function WorkExperience()
 {   
     return (
-        <div className="relative w-full p-4 text-white">
+        <div className={`relative w-full p-4 text-white`}>
             <Typewriter text="$history | grep experience" textSetting="text-xl text-green-500"/>
 
             <FadeIn delay={1.5}>
                 <div className="h-full w-full flex items-center justify-center">
-                    <Carousel className="w-full max-w-lg h-full flex justify-center">
+                    <Carousel className="w-full max-w-lg h-full flex flex-col justify-center">
                         <CarouselContent className="h-full w-full">
                             { history.map((entry, index) => (
                                 <CarouselItem className="p-5 w-full h-full flex flex-col" key={index}>
@@ -80,8 +80,14 @@ export default function WorkExperience()
                             ))}
                         </CarouselContent>
 
-                        <CarouselPrevious />
-                        <CarouselNext />
+                        <div className="hidden lg:flex">
+                            <CarouselPrevious/>
+                            <CarouselNext/>
+                        </div>
+                        <div className="lg:hidden relative">
+                            <CarouselPrevious className="absolute bottom-5 left-0"/>
+                            <CarouselNext className="absolute bottom-5 right-0"/>
+                        </div>                        
                     </Carousel>
                 </div>
             </FadeIn>
