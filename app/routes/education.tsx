@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import LogoHCMUS from "~/assets/images/logo-hcmus.png";
 import LogoPTNK from "~/assets/images/logo-ptnk.jpg";
 import { LogoMonash } from "~/assets/logos";
@@ -86,6 +87,34 @@ const history = [
 //****************************************************************************************************
 export default function Education()
 {
+    /// Handle flip upon click
+    const [flipCounts, setFlipCounts] = useState<Record<string, number>>({}); 
+
+    /// Init 4 flips, taking fade-in delay into account
+    useEffect(() => {
+      const initialFlipCounts: Record<string, number> = {};
+      history.forEach((entry) => {
+        initialFlipCounts[entry.id] = 4;
+      });
+      setFlipCounts(initialFlipCounts);
+    }, []);
+    
+    const handleClick = (id: string) => {
+        /// Set flip count to 0 then 2 to make React re-render
+        setFlipCounts((prevFlipCounts) => ({
+        ...prevFlipCounts,
+        [id]: 0,
+        }));
+        /// Delay instead of await
+        setTimeout(() => {
+        setFlipCounts((prevFlipCounts) => ({
+            ...prevFlipCounts,
+            [id]: 2,
+        }));
+        }, 1);
+    };
+
+    /// RENDER
     return (
         <div className="relative w-full p-4 text-white">
             <Typewriter text="$history | grep education" textSetting="text-xl text-green-500"/>
@@ -96,10 +125,10 @@ export default function Education()
                         <AccordionItem value={entry.id} key={index}>
                             <AccordionTrigger className="none-select">
                                 <div className="flex none-select">
-                                    <div className="">
-                                    {entry.logo()}
+                                    <div onClick={() => handleClick(entry.id)}>
+                                        {entry.logo()}
+                                        <FlippingLogo id={entry.id} flipCount={flipCounts[entry.id]}/>
                                     </div>
-                                    <FlippingLogo id={entry.id} flipCount={4}/>
                                     <div className="flex flex-col items-start none-select">
                                         <div className={`text-base`}>
                                             {entry.organization}

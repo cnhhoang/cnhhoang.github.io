@@ -64,7 +64,6 @@ export default function WorkExperience()
                                     <div className="w-full flex justify-center">
                                         {entry.logo()}
                                     </div>
-
                                     <div className="mt-3 text-white text-xl">
                                         {entry.title}
                                     </div>
