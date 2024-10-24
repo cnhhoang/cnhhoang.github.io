@@ -117,7 +117,7 @@ export default function PortfolioSideMenu()
 
     return (
         <Sheet modal={false} open={openState}>  
-            <MenuClose className="absolute fixed z-20 right-0 bottom-0 border-green-500 lg:hidden"/>
+            <MenuClose className="fixed z-20 right-0 bottom-0 border-green-500 lg:hidden"/>
 
             <SheetContent 
                 side={"right"} 
