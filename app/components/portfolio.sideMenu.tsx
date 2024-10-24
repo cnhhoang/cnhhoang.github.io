@@ -58,7 +58,6 @@ const portfolioMenuItems = [
                 link: "/portfolio/cp-lib/cpp",
             },
         ],
-        status: "queued",
     },
     {
         title: "Web App Pentesting",
@@ -83,7 +82,7 @@ const portfolioMenuItems = [
     {
         title: "SUBLEQ",
         link: "subleq",
-        status: "pending",
+        status: "queued",
     },
 ];
 
