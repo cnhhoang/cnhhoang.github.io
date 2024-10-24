@@ -78,6 +78,11 @@ const portfolioMenuItems = [
     {
         title: "Admin Panel",
         link: "admin-panel",
+        status: "active",
+    },
+    {
+        title: "SUBLEQ",
+        link: "subleq",
         status: "pending",
     },
 ];
