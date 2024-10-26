@@ -58,6 +58,7 @@ const portfolioMenuItems = [
                 link: "/portfolio/cp-lib/cpp",
             },
         ],
+        status: "completed"
     },
     {
         title: "Web App Pentesting",
@@ -82,7 +83,7 @@ const portfolioMenuItems = [
     {
         title: "SUBLEQ",
         link: "subleq",
-        status: "queued",
+        status: "completed",
     },
 ];
 
@@ -183,6 +184,10 @@ export default function PortfolioSideMenu()
                 {/* Status legend */}
                 <div className="absolute top-3 lg:top-auto lg:bottom-3 right-3 text-sm text-gray-300">
                     {[
+                        {
+                            status: "completed",
+                            description: "Completed",
+                        },
                         {
                             status: "active",
                             description: "In Progress",
