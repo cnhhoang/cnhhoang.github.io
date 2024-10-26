@@ -3,6 +3,7 @@
 import { Link } from "@remix-run/react";
 import { Star } from "lucide-react";
 import FadeIn from "~/lib/fade-in";
+import GradientButton from "~/lib/gradient-button";
 
 //****************************************************************************************************
 export default function CPLibCPP()
@@ -18,12 +19,9 @@ export default function CPLibCPP()
                     Each algorithms are submitted to a variety of Online Judges (SPOJ, Codeforces, etc.) to ensure correctness and performance.
                 </div>
                 <Link to="https://github.com/cnhhoang/Data-Structures-and-Algorithms">
-                    <div className={`bg-gradient-to-b from-sky-800 to-cyan-500  text-white
-                                    rounded-md sm:rounded-sm hover:rounded-full hover:font-bold
-                                    flex items-center justify-center px-3 py-1 
-                    `}>
+                    <GradientButton>
                         Give it a <Star className="ml-2"/>
-                    </div>
+                    </GradientButton>
                 </Link>
             </div>
         </FadeIn>
