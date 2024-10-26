@@ -17,7 +17,7 @@ const skills = [
     },
     {
         category: "Web Development",
-        categorySetting: "text-emerald-500",
+        categorySetting: "font-bold text-emerald-500",
         entries: [
             "JavaScript",
             "TypeScript",
@@ -27,12 +27,15 @@ const skills = [
             "Remix",
             "React",
             "NodeJS",
+            "AWS",
             "Github",
             "Github Action",
             "Prisma",
             "MongoDB",
             "PostGreSQL",
             "MySQL",
+            "REST API",
+            "Serverless function",
         ],
     },
     {
