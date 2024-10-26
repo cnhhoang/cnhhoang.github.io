@@ -68,6 +68,16 @@ const config: Config = {
             'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
+        "bounce-left": {
+          '0%, 100%': {
+            transform: 'translateX(25%)',  // Moves the element 25% to the right
+            'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)',
+          },
+          '50%': {
+            transform: 'translateX(0)',  // Brings the element back to its original position
+            'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
         "bounce-right": {
           '0%, 100%': {
             transform: 'translateX(-25%)',  // Moves the element 25% to the left
@@ -119,6 +129,7 @@ const config: Config = {
       },
       animation: {
         bounce: 'bounce 1s infinite',
+        "bounce-left": 'bounce-left 1s infinite',
         "bounce-right": 'bounce-right 1s infinite',
         fadeIn: 'fadeIn 1s ease-in forwards',
         slideIn: 'slideIn 0.5s ease-out forwards',
