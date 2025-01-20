@@ -17,7 +17,16 @@ import Typewriter from "~/lib/typewriter";
 import { languageSwitchStyle } from "~/lib/utils";
 
 // ====================================================================================================
-const history: { [key: string]: {}[] } = {};
+const history: {
+    [key: string]: {
+      id: string;
+      logo: () => JSX.Element;
+      organization: string | JSX.Element;
+      title: JSX.Element;
+      duration: string;
+      description: string[];
+    }[];
+  } = {};
 
 // --------------------------
 history['en'] = [
