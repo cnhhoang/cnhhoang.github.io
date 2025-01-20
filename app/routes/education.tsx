@@ -11,10 +11,16 @@ import {
   } from "~/components/ui/accordion";
 import FadeIn from "~/lib/fade-in";
 import FlippingLogo from "~/lib/flipping-logo";
+import LanguageSwitch from "~/lib/language-switch";
 import Typewriter from "~/lib/typewriter";
 
+import { languageSwitchStyle } from "~/lib/utils";
+
 // ====================================================================================================
-const history = [
+const history: { [key: string]: {}[] } = {};
+
+// --------------------------
+history['en'] = [
     {   id: "monash",
         logo: () => (
             <div id="monash" className="h-fit w-12 mr-2 none-select ">
@@ -25,7 +31,7 @@ const history = [
             <div className="rounded-sm sm:rounded-md px-2 bg-white text-black">
                 Master of Cybersecurity
             </div>,
-        duration: "July 2024",
+        duration: "2024",
         description: [
             "Master degree awarded with distinction (WAM above 80).",
             "Thesis accepted and presented as a full paper at ProvSec2024 (acceptance rate 33%).",
@@ -84,16 +90,90 @@ const history = [
     },    
 ];
 
+// --------------------------
+history['vi'] = [
+    {   id: "monash",
+        logo: () => (
+            <div id="monash" className="h-fit w-12 mr-2 none-select ">
+                <LogoMonash/>
+            </div>),
+        organization: "Đại học Monash",
+        title: 
+            <div className="rounded-sm sm:rounded-md px-2 bg-white text-black">
+                Thạc sĩ An toàn Thông tin
+            </div>,
+        duration: "2024",
+        description: [
+            "Tốt nghiệp loại giỏi với điểm trung bình trên 80",
+            "Luận văn tốt nghiệp được kiểm duyệt và công bố tại Hội nghị ProvSec2024 (tỉ lệ 33%).",
+            "Hạng nhì Monash MCPC 2022, cuộc thi lập trình thi đấu lớn nhất tại Đại học Monash.",
+            "Thư khen cho thành tích học tập xuất sắc.",
+        ],
+    },
+    {   id: "hcmus",
+        logo: () => (
+            <div id="hcmus" className="h-fit w-14 -translate-x-0.5 -translate-y scale-[105%] none-select">
+                <img src={LogoHCMUS} />
+            </div>
+        ),
+        organization:   
+            <div className="text-sky-500 flex">
+                Đại học Khoa học Tự nhiên
+                <span className="hidden sm:block ml-1"> - ĐHQG TPHCM </span>
+            </div>,
+        title:             
+            <div className="rounded-sm sm:rounded-md px-2 bg-blue-900 text-white">
+                Cử nhân Khoa học Máy tính
+            </div>,
+        duration: "2020",
+        description: [
+            "Tốt nghiệp loại giỏi với điểm trung bình trên 80.",
+            "Bài báo khoa học xuất sắc nhất tại Hội nghị SoICT2019.",
+            "Bài báo khoa học được công bố tại Hội nghị FDSE2019.",
+            "Giải ba Sinh viên An toàn Thông tin Miền Nam, 2019",
+            "Giải nhì Olympic Tin học Sinh viên Việt Nam, 2018",
+            "Hạng 48 (tổng số 148 đội) trong kì thi ACM-ICPC Khu vực Châu Á, 2017.",
+            "Giải nhì (hạng 15 trên tổng số 188 đội) trong kì thi ACM-ICPC Việt Nam, 2017.",
+            "Giải ba Olympic Tin học Sinh viên Việt Nam, 2016.",
+            "Các học bổng theo học kỳ của Đại học Khoa học Tự nhiên.",
+        ],
+    },    
+    {   id: "ptnk",
+        logo: () => (
+            <div id="ptnk" className="h-fit w-14 scale-110 mr-2 none-select">
+                <img src={LogoPTNK} />
+            </div>
+        ),
+        organization:   <div className="text-sky-100 flex">
+                            Trường Phổ Thông Năng Khiếu 
+                            <span className="hidden sm:block ml-1"> - ĐHQG TPHCM </span>
+                        </div>,
+        title:  <div className="rounded-sm sm:rounded-md px-2 bg-sky-100 text-blue-800 flex">
+                    Khối Chuyên Tin
+                </div>,
+        duration: "2016",
+        description: [
+            "Thủ khoa Học sinh giỏi Thành phố môn Tin học, 2016",
+            "Đội tuyển tham dự Học sinh giỏi Quốc gia, 2016.",
+            "Huy chương Vàng Olympic 30/4 môn Tin học, 2015.",
+            "Huy chương Vàng Olympic 30/4 môn Tin học, 2014.",
+            "Học bổng trường Phổ Thông Năng Khiếu.",
+        ],
+    },    
+];
+
 //****************************************************************************************************
 export default function Education()
 {
+    const [lan, setLan] = useState("en");
+
     /// Handle flip upon click
     const [flipCounts, setFlipCounts] = useState<Record<string, number>>({}); 
 
     /// Init 4 flips, taking fade-in delay into account
     useEffect(() => {
       const initialFlipCounts: Record<string, number> = {};
-      history.forEach((entry) => {
+      history[lan].forEach((entry) => {
         initialFlipCounts[entry.id] = 4;
       });
       setFlipCounts(initialFlipCounts);
@@ -117,11 +197,17 @@ export default function Education()
     /// RENDER
     return (
         <div className="relative w-full p-4 text-white">
+            <div className={languageSwitchStyle}
+                onClick={() => setLan(lan === "vi" ? "en" : "vi")}
+            >
+                <LanguageSwitch lan={lan}/>
+            </div>
+
             <Typewriter text="$history | grep education" textSetting="text-xl text-green-500"/>
 
             <FadeIn delay={1.5}>
                 <Accordion type="multiple" className="w-full none-select">
-                    {history.map((entry, index) => (
+                    {history[lan].map((entry, index) => (
                         <AccordionItem value={entry.id} key={index}>
                             <AccordionTrigger className="none-select">
                                 <div className="flex none-select">

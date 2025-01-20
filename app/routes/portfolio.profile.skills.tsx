@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useTerminal } from "./portfolio";
 
 // ====================================================================================================
@@ -6,12 +6,8 @@ const skills = [
     {
         category: "Programming Languages",
         entries: [
-            "C", 
-            "C++",
-            "Python",
-            "Java",
-            "JavaScript", 
-            "TypeScript",
+            "C", "C++", "Python", "Java",
+            "JavaScript", "TypeScript",
             "Bash",
         ],
     },
@@ -19,33 +15,18 @@ const skills = [
         category: "Web Development",
         categorySetting: "font-bold text-emerald-500",
         entries: [
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "TailwindCSS",
-            "Remix",
-            "React",
-            "NodeJS",
-            "AWS",
-            "Github",
-            "Github Action",
-            "Prisma",
-            "MongoDB",
-            "PostGreSQL",
-            "MySQL",
-            "REST API",
-            "Serverless function",
+            "JavaScript", "TypeScript", "HTML", "CSS", "TailwindCSS",
+            "Remix", "React", "NodeJS", "AWS",
+            "Github", "Github Action",
+            "Prisma", "MongoDB", "PostGreSQL", "MySQL",
+            "REST API", "Serverless function",
         ],
     },
     {
         category: "Cybersecurity",
         categorySetting: "w-fit font-bold bg-gradient-to-r from-red-500 via-violet-500 to-cyan-500 bg-clip-text text-transparent",
         entries: [
-            "Burpsuite",
-            "JWT.io",
-            "FTK Imager",
-            "John Ripper",
+            "Burpsuite", "JWT.io", "FTK Imager", "John Ripper",
         ],
     },
 ];

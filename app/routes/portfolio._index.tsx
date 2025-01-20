@@ -1,6 +1,5 @@
 import Typewriter from "~/lib/typewriter";
 import FadeIn from "~/lib/fade-in";
-import { StepForward } from "lucide-react";
 
 // ====================================================================================================
 export const wScreenFit: string = "w-[calc(100vw-17rem)]";

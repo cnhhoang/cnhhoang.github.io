@@ -68,10 +68,10 @@ const portfolioMenuItems = [
                 title: "Dashboard",
                 link: "/portfolio/pentest-web",
             },
-            {
-                title: "Security topics",
-                link: "/portfolio/pentest-web/topics",
-            },                       
+            // {
+            //     title: "Security topics",
+            //     link: "/portfolio/pentest-web/topics",
+            // },                       
         ],
         status: "active",
     },
