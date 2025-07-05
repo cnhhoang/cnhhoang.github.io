@@ -32,7 +32,7 @@ export default function About()
 {
   const [screenSettings, setscreenSettings] = useState("scale-50 skew-x-6 -skew-y-1");
   const [textSetting, setTextSetting] = useState("text-green-500 text-[60px] sm:text-[90px]");
-  const [lan, setLan] = useState("en");
+  const [language, setLanguage] = useState("en");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -45,9 +45,9 @@ export default function About()
   return (
     <div className={`${hScreenFit} w-full flex items-center justify-center relative`}>
         <div className={languageSwitchStyle}
-            onClick={() => setLan(lan === "vi" ? "en" : "vi")}
+            onClick={() => setLanguage(language === "vi" ? "en" : "vi")}
         >
-            <LanguageSwitch lan={lan}/>
+            <LanguageSwitch language={language}/>
         </div>
 
         <Terminal className={`${screenSettings} ${terminalSize} transform transition-transform duration-1000 ease-in-out`}>
@@ -55,7 +55,7 @@ export default function About()
                 <Typewriter text="$ whoami" textSetting={`${textSetting} transition-all duration-1000`}/>
             </div>
             
-            {paragraphs[lan].map((entry, index) => (
+            {paragraphs[language].map((entry, index) => (
                 <FadeIn key={index} delay={effectTime*1.5/1000} asChild>
                     <div className="text-lg mt-5">
                         {entry}
