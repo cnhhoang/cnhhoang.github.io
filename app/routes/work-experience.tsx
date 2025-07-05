@@ -37,11 +37,11 @@ const history = [
             </div>
         ),
         organization: "SELAB",
-        title: "Research Intern",
+        title: "Researcher",
         duration: "May 2019 – September 2020",
         description: [
-            "Conducted research on Encrypted Database.",
-            "Published two peer-reviewed, which were accepted in international conferences.",
+            "Conducted research on Encrypted Database",
+            "Published two papers, which were peer-reviewed and accepted at international conferences",
             "Honored with the Best Paper Award at SoICT2019.",
             "Optimized the algorithm’s performance by applying Lazy Propagation into Segment Tree data structure."
         ],
