@@ -17,7 +17,16 @@ import Typewriter from "~/lib/typewriter";
 import { languageSwitchStyle } from "~/lib/utils";
 
 // ====================================================================================================
-const history: { [key: string]: {}[] } = {};
+type HistoryItem = {
+    id: string;
+    logo: () => JSX.Element;
+    organization: string | JSX.Element;
+    title: JSX.Element;
+    duration: string;
+    description: string[];
+};
+
+const history: { [key: string]: HistoryItem[] } = {};
 
 // --------------------------
 history['en'] = [
@@ -165,7 +174,7 @@ history['vi'] = [
 //****************************************************************************************************
 export default function Education()
 {
-    const [lan, setLan] = useState("en");
+    const [language, setLanguage] = useState("en");
 
     /// Handle flip upon click
     const [flipCounts, setFlipCounts] = useState<Record<string, number>>({}); 
@@ -173,7 +182,7 @@ export default function Education()
     /// Init 4 flips, taking fade-in delay into account
     useEffect(() => {
       const initialFlipCounts: Record<string, number> = {};
-      history[lan].forEach((entry) => {
+      history[language].forEach((entry) => {
         initialFlipCounts[entry.id] = 4;
       });
       setFlipCounts(initialFlipCounts);
@@ -198,16 +207,16 @@ export default function Education()
     return (
         <div className="relative w-full p-4 text-white">
             <div className={languageSwitchStyle}
-                onClick={() => setLan(lan === "vi" ? "en" : "vi")}
+                onClick={() => setLanguage(language === "vi" ? "en" : "vi")}
             >
-                <LanguageSwitch lan={lan}/>
+                <LanguageSwitch language={language}/>
             </div>
 
             <Typewriter text="$history | grep education" textSetting="text-xl text-green-500"/>
 
             <FadeIn delay={1.5}>
                 <Accordion type="multiple" className="w-full none-select">
-                    {history[lan].map((entry, index) => (
+                    {history[language].map((entry, index) => (
                         <AccordionItem value={entry.id} key={index}>
                             <AccordionTrigger className="none-select">
                                 <div className="flex none-select">

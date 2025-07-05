@@ -21,20 +21,20 @@ const languageOptions = [
 // --------------------------
 interface LanguageSwitchProps {
     className?: string;
-    lan: string;
+    language: string;
 }
   
-  export default function LanguageSwitch({ className="", lan }: LanguageSwitchProps) {
+  export default function LanguageSwitch({ className="", language }: LanguageSwitchProps) {
   
     return (
       <div
         className={`grid grid-cols-2 justify-center items-center hover:cursor-pointer ${className}`}
-        // onClick={() => setLan(lan === "vi" ? "en" : "vi")}
+        // onClick={() => setLan(language === "vi" ? "en" : "vi")}
       >
         {languageOptions.map((item, index) => (
           <div
             className={`h-full flex items-center justify-center font-bold 
-                        transition ${item.id === lan ? "" : "grayscale opacity-50"}`}
+                        transition ${item.id === language ? "" : "grayscale opacity-50"}`}
             key={index}
           >
             {item.flag}
