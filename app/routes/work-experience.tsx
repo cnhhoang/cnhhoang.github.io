@@ -1,5 +1,5 @@
-import LogoHCMUS from "~/assets/images/logo-hcmus.png";
 import LogoSelab from "~/assets/images/logo-selab.png";
+import LogoCloudgo from "~/assets/images/logo-cloudgo.png";
 
 import {
     Carousel,
@@ -13,6 +13,22 @@ import Typewriter from "~/lib/typewriter";
 
 // ====================================================================================================
 const history = [
+    {
+        logo: () => (
+            <div id="cloudgo" className="w-full h-fit mr-2 none-select flex justify-center items-center none-select">
+                <img src={LogoCloudgo} />
+            </div>
+        ),
+        organization: "CloudGO",
+        title: "Fullstack Software Engineer",
+        duration: "Dec 2024 – Oct 2025",
+        description: [
+            "Developed, customized, and deployed a CRM web application using the LAMP (Linux, Apache, MySQL, PHP) stack and the Vtiger framework to support core operations and meet the strategic needs of a 1,000-employee organization, ensuring reliable performance for hundreds of frequent users.",
+            "Designed and implemented automated data synchronization between systems using a self-built, SQL-backed data processing queue to store and process API data. Identified and resolved a critical race condition during development by implementing minimal row-level locking and retry logic, ensuring data integrity while processing over 1,000,000 records.",
+            "Optimized SQL database performance by using table sharding, Redis caching, temporary tables, batch inserts, and prepared statements, achieving up to 70% faster query performance.",
+            "Technologies: PHP, MySQL, JavaScript, HTML, CSS, Redis, Vtiger."
+        ],
+    },    
     {
         logo: () => (
             <div>
@@ -44,7 +60,7 @@ const history = [
             "Honored with the Best Paper Award at SoICT2019.",
             "Optimized the algorithm’s performance by applying Lazy Propagation into Segment Tree data structure."
         ],
-    },
+    }
 ];
 
 //****************************************************************************************************
@@ -72,7 +88,7 @@ export default function WorkExperience()
 
                                     {entry.description.map((description, index) => (
                                         <div key={index} className="text-slate-400">
-                                            - {description}
+                                            ● {description}
                                         </div>
                                     ))}                            
                                 </CarouselItem>
