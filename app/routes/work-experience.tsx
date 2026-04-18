@@ -1,5 +1,5 @@
 import LogoHCMUS from "~/assets/images/logo-hcmus.png";
-import { LogoPromithicWithText } from "~/assets/logos";
+import LogoSelab from "~/assets/images/logo-selab.png";
 
 import {
     Carousel,
@@ -15,8 +15,8 @@ import Typewriter from "~/lib/typewriter";
 const history = [
     {
         logo: () => (
-            <div id="promithic" className="w-96 h-fit mr-2 none-select">
-                <LogoPromithicWithText />
+            <div>
+
             </div>
         ),
         organization: "Promithic",
@@ -31,9 +31,8 @@ const history = [
     },
     {
         logo: () => (
-            <div id="selab" className="w-[4.5rem] h-fit mr-2 none-select flex justify-center items-center none-select">
-                <img src={LogoHCMUS} />
-                <div className="text-7xl bg-gradient-to-r from-blue-900 via-sky-900 to-indigo-900 bg-clip-text text-transparent"> SELAB </div>
+            <div id="selab" className="w-full h-fit mr-2 none-select flex justify-center items-center none-select">
+                <img src={LogoSelab} />
             </div>
         ),
         organization: "SELAB",
@@ -57,8 +56,8 @@ export default function WorkExperience()
 
             <FadeIn delay={1.5}>
                 <div className="h-full w-full flex items-center justify-center">
-                    <Carousel className="w-full max-w-lg h-full flex flex-col justify-center">
-                        <CarouselContent className="h-full w-full">
+                    <Carousel className="w-full max-w-lg h-full flex flex-col justify-center items-center">
+                        <CarouselContent className="h-full items-center">
                             { history.map((entry, index) => (
                                 <CarouselItem className="p-5 w-full h-full flex flex-col" key={index}>
                                     <div className="w-full flex justify-center">
@@ -72,9 +71,9 @@ export default function WorkExperience()
                                     </div>
 
                                     {entry.description.map((description, index) => (
-                                        <li key={index} className="text-slate-400">
-                                            {description}
-                                        </li>
+                                        <div key={index} className="text-slate-400">
+                                            - {description}
+                                        </div>
                                     ))}                            
                                 </CarouselItem>
                             ))}
