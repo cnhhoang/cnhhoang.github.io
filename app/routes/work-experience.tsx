@@ -1,5 +1,6 @@
 import LogoSelab from "~/assets/images/logo-selab.png";
 import LogoCloudgo from "~/assets/images/logo-cloudgo.png";
+import LogoAnz from "~/assets/images/logo-anz.png";
 
 import {
     Carousel,
@@ -15,7 +16,24 @@ import Typewriter from "~/lib/typewriter";
 const history = [
     {
         logo: () => (
-            <div id="cloudgo" className="w-full h-fit mr-2 none-select flex justify-center items-center none-select">
+            <div id="anz" className="w-1/2 h-fit mr-2 none-select flex justify-center items-center none-select">
+                <img src={LogoAnz} />
+            </div>
+        ),
+        organization: "ANZ",
+        title: "Software Engineer",
+        duration: "Oct 2025 - Now",
+        description: [
+            "Consolidated and optimized GitHub Actions CI/CD pipelines using concurrency grouping, conditional job triggering, and reusable containerized actions, and implemented OIDC-based zero-trust authentication, improving maintainability and security, and decreasing execution time by approximately 30%.",
+            "Collaborated with teams to safely migrate active microservices from GKE (Kubernetes) to Cloud Run with zero downtime.",
+            "Developed and deployed a Temporal workflow in Go to automate task sequencing for 5,000,000 monthly active users.",
+            "Applied AI-powered development and knowledge tools, including Claude Code, Cursor, and Rovo MCP Server, to accelerate coding, improve documentation discovery, and enhance overall developer productivity.",
+            "Technologies: Go, GitHub Actions, Docker, Go Testing, Terraform, GCP, Temporal, Splunk."
+        ],
+    },      
+    {
+        logo: () => (
+            <div id="cloudgo" className="w-2/3 h-fit mr-2 none-select flex justify-center items-center none-select">
                 <img src={LogoCloudgo} />
             </div>
         ),
@@ -72,8 +90,8 @@ export default function WorkExperience()
 
             <FadeIn delay={1.5}>
                 <div className="h-full w-full flex items-center justify-center">
-                    <Carousel className="w-full max-w-lg h-full flex flex-col justify-center items-center">
-                        <CarouselContent className="h-full items-center">
+                    <Carousel className="w-full max-w-xl h-full flex flex-col justify-center items-center">
+                        <CarouselContent className="h-full">
                             { history.map((entry, index) => (
                                 <CarouselItem className="p-5 w-full h-full flex flex-col" key={index}>
                                     <div className="w-full flex justify-center">
